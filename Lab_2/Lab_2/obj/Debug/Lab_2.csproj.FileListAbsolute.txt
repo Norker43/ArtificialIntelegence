@@ -1,0 +1,13 @@
+G:\7 семестр\Интеллектуальные системы и Web\FuckThisLife\Lab_2\Lab_2\bin\Debug\Lab_2.exe.config
+G:\7 семестр\Интеллектуальные системы и Web\FuckThisLife\Lab_2\Lab_2\bin\Debug\Lab_2.exe
+G:\7 семестр\Интеллектуальные системы и Web\FuckThisLife\Lab_2\Lab_2\bin\Debug\Lab_2.pdb
+G:\7 семестр\Интеллектуальные системы и Web\FuckThisLife\Lab_2\Lab_2\obj\Debug\Lab_2.csprojAssemblyReference.cache
+G:\7 семестр\Интеллектуальные системы и Web\FuckThisLife\Lab_2\Lab_2\obj\Debug\Lab_2.Form1.resources
+G:\7 семестр\Интеллектуальные системы и Web\FuckThisLife\Lab_2\Lab_2\obj\Debug\Lab_2.Properties.Resources.resources
+G:\7 семестр\Интеллектуальные системы и Web\FuckThisLife\Lab_2\Lab_2\obj\Debug\Lab_2.csproj.GenerateResource.cache
+G:\7 семестр\Интеллектуальные системы и Web\FuckThisLife\Lab_2\Lab_2\obj\Debug\Lab_2.csproj.CoreCompileInputs.cache
+G:\7 семестр\Интеллектуальные системы и Web\FuckThisLife\Lab_2\Lab_2\obj\Debug\Lab_2.exe
+G:\7 семестр\Интеллектуальные системы и Web\FuckThisLife\Lab_2\Lab_2\obj\Debug\Lab_2.pdb
+D:\7 семестр\Интеллектуальные системы и Web\FuckThisLife\Lab_2\Lab_2\bin\Debug\Lab_2.exe.config
+D:\7 семестр\Интеллектуальные системы и Web\FuckThisLife\Lab_2\Lab_2\obj\Debug\Lab_2.exe
+D:\7 семестр\Интеллектуальные системы и Web\FuckThisLife\Lab_2\Lab_2\obj\Debug\Lab_2.pdb
