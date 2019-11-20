@@ -8,13 +8,31 @@ namespace Lab_2
 {
     class LogicalInferenceMachine
     {
+        WorkMember workMember;
         RuleWorkList ruleWorkList;
         KnowledgeBase knowledgeBase;
 
         public LogicalInferenceMachine(KnowledgeBase knowledgeBase)
         {
-            ruleWorkList = new RuleWorkList();
+            workMember = new WorkMember();
+            ruleWorkList = new RuleWorkList(ref workMember);
             this.knowledgeBase = knowledgeBase;
+        }
+
+        public void LogicalInferenceStart()
+        {
+            foreach (Rule rule in knowledgeBase.Rules)
+            {
+                if (rule.Ancendant.Contains("?"))
+                {
+
+                }
+            }
+        }
+
+        public void LogicalInverseInferenceStart()
+        {
+
         }
     }
 }

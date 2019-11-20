@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml;
+using System.Xml.Linq;
 
 namespace Lab_2
 {
@@ -11,17 +12,16 @@ namespace Lab_2
     {
         //Знания хранятся в виде списка правил в xml(json)
         //Этот класс будет работать с xml(json)
-        NewKnowledge newKnowledge;
-        List<Rule> rules;
+
+        public List<Rule> Rules { get; set; }
 
         public KnowledgeBase()
         {
-            newKnowledge = new NewKnowledge();
+            Rules = new List<Rule>();
         }
 
         public void LoadOut(string path)
         {
-            rules = new List<Rule>();
             XmlDocument xDoc = new XmlDocument();
             xDoc.Load(path);
 
@@ -53,13 +53,33 @@ namespace Lab_2
                     }
                 }
 
-                rules.Add(rule);
+                Rules.Add(rule);
             }
         }
 
-        public void LoadIn()
+        public void LoadIn(string path, List<Rule> rules)
         {
+            XDocument xDoc = new XDocument();
+            XElement Rules = new XElement("Rules");
 
+            foreach (Rule rule in rules)
+            {
+                XElement xRule = new XElement("Rule");
+                xRule.Add(new XAttribute("name", rule.Name));
+                xRule.Add(new XElement("ancendant", rule.Ancendant));
+                xRule.Add(new XElement("consequent", rule.Consequent));
+                Rules.Add(xRule);
+            }
+
+            xDoc.Add(Rules);
+            xDoc.Save(path);
+
+            LoadOut(path);
+        }
+
+        public void Clear()
+        {
+            Rules.Clear();
         }
     }
 }

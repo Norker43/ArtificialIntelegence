@@ -8,11 +8,15 @@ namespace Lab_2
 {
     class RuleWorkList
     {
+        WorkMember workMember;
+
         public List<Rule> itWorked { get; set; }
 
-        public RuleWorkList()
+        public RuleWorkList(ref WorkMember workMember)
         {
             itWorked = new List<Rule>();
+            this.workMember = workMember;
         }
+
     }
 }

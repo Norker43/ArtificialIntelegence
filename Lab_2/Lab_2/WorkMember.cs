@@ -8,5 +8,11 @@ namespace Lab_2
 {
     class WorkMember
     {
+        public List<string> facts;
+
+        public WorkMember()
+        {
+            facts = new List<string>();
+        }
     }
 }

@@ -1,27 +1,15 @@
-<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Rules>
-	<rule name="Проверка 1">
-		<ancendant>Анцендент проверки 1</ancendant>
-		<consequent>Консеквент проверки 1</consequent>
-	</rule>
-	<rule name="Проверка 2">
-		<ancendant>Анцендент проверки 2</ancendant>
-		<consequent>Консеквент проверки 2</consequent>
-	</rule>
-	<rule name="Проверка 3">
-		<ancendant>Анцендент проверки 3</ancendant>
-		<consequent>Консеквент проверки 3</consequent>
-	</rule>
-	<rule name="Проверка 4">
-		<ancendant>Анцендент проверки 4</ancendant>
-		<consequent>Консеквент проверки 4</consequent>
-	</rule>
-	<rule name="Проверка 5">
-		<ancendant>Анцендент проверки 5</ancendant>
-		<consequent>Консеквент проверки 5</consequent>
-	</rule>
-	<rule name="Проверка 6">
-		<ancendant>Анцендент проверки 6</ancendant>
-		<consequent>Консеквент проверки 6</consequent>
-	</rule>
+  <Rule name="Проверка 1">
+    <ancendant>Анцендент проверки 1</ancendant>
+    <consequent>Консеквент проверки 1</consequent>
+  </Rule>
+  <Rule name="Проверка 6">
+    <ancendant>Анцендент проверки 6</ancendant>
+    <consequent>Консеквент проверки 6</consequent>
+  </Rule>
+  <Rule name="Проверка 8">
+    <ancendant>Анцендент проверки 8</ancendant>
+    <consequent>Консеквент проверки 8</consequent>
+  </Rule>
 </Rules>
