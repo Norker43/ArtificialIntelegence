@@ -1,2 +1,2 @@
 # FuckThisLife
-This is test repo
+This is best repository
