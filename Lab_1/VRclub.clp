@@ -30,12 +30,12 @@
    =>
    (assert (story-games (yes-or-no-p "Do you want to play in story games? (yes/no) "))))
    
-(defrule determine-game-mode ""
-   (not(game-mode ?))
+(defrule determine-coop-mode ""
+   (not(coop-mode ?))
    (story-games no)
    (not (finalAnswer ?))
    =>
-   (assert (game-mode (yes-or-no-p "Would you like to play cooperative games? (yes/no) "))))
+   (assert (coop-mode (yes-or-no-p "Would you like to play cooperative games? (yes/no) "))))
    
 (defrule determine-dancing ""
    (not(dancing ?))
@@ -63,9 +63,10 @@
    =>
    (assert (friends (yes-or-no-p "Have you come with friends? (yes/no) "))))
    
+   
 (defrule determine-vest-problem ""
-   (or (story-games no)
-   (game-mode no))
+   (and (story-games no)
+   (coop-mode yes))
    (not(vest-problem ?))
    (not (finalAnswer ?))
    =>
@@ -95,14 +96,14 @@
    
 (defrule story-coop ""
    (or (story-games yes)
-		  (game-mode yes))
+		  (coop-mode yes))
    (not (finalAnswer ?))
    =>
    (assert (story-coop yes)))
    
 (defrule determine-story-coop ""
-   (story-games no)
-   (game-mode no)
+   (and (story-games no)
+   (game-mode no))
    (not (finalAnswer ?))
    =>
    (assert (story-coop no)))
@@ -193,7 +194,12 @@
 	(not (finalAnswer ?))
 	=>
 	(assert (finalAnswer "List of simulators: BeatSiber, HotPoint, ElvinAssasin, etc.")))
-   
+	
+(defrule no-finalAnswer ""
+  (declare (salience -10))
+  (not (finalAnswer ?))
+  =>
+  (assert (finalAnswer "Fuck this life! ")))   
    
    ;;;********************************
 ;;;* STARTUP AND CONCLUSION RULES *
