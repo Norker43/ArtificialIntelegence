@@ -53,7 +53,7 @@
 (defrule determine-timing ""
    (not (finalAnswer ?))
    =>
-   (assert (timing (ask-question "How much time do you plan to spend in a VR-club (15m, 30m, 60m+) ? " 1 2 3))))
+   (assert (timing (ask-question "How much time do you plan to spend in a VR-club (15m, 30m, 60m+) ? " 15 30 60))))
    
 (defrule determine-friends ""
    (not(friends ?))
@@ -83,13 +83,13 @@
 ;;;***
 (defrule yes-timing-rest-rule ""
    (and(timing ?timing)
-   (test(> ?timing 2)))
+   (test(> ?timing 30)))
    =>
    (assert (timing-rest yes)))
    
 (defrule no-timing-rest-rule ""
    (and(timing ?timing)
-   (test(<= ?timing 2)))
+   (test(<= ?timing 30)))
    =>
    (assert (timing-rest no)))
    
@@ -123,19 +123,19 @@
 	=>
 	(assert (rhythm-games no)))
    
-(defrule high-cost ""
+(defrule low-time ""
 	(story-games yes)
 	(rhythm-games yes)
 	(not (finalAnswer ?))
     =>
-	(assert (high-cost yes)))
+	(assert (low-time yes)))
    
-(defrule determine-high-cost ""
+(defrule determine-low-time ""
 	(rhythm-games no)
 	(story-games no)
 	(not (finalAnswer ?))
 	=>
-	(assert (high-cost no)))
+	(assert (low-time no)))
    
 (defrule survival-games ""
 	(or (vest-problem yes)
@@ -151,9 +151,9 @@
 	=>
 	(assert (survival-games no)))
    
-(defrule low-cost ""
-	(or(high-cost no)
-	(not (high-cost ?)))
+(defrule round-game ""
+	(or(low-time no)
+	(not (low-time ?)))
 	(or(survival-games yes)
 	(and(rhythm-games yes)
 	(story-games no))
@@ -161,34 +161,34 @@
 	(rhythm-games no)))
 	(not (finalAnswer ?))
 	=>
-	(assert (low-cost yes)))
+	(assert (round-game yes)))
    
-(defrule determine-low-cost ""
-	(high-cost no)
+(defrule determine-round-game ""
+	(low-time no)
 	(survival-games no)
 	(not (finalAnswer ?))
 	=>
-	(assert (low-cost no)))   
+	(assert (round-game no)))   
 ;;;****************
 ;;;* Final answers *
 ;;;***
 (defrule coop-games ""
-	(high-cost yes)
+	(low-time yes)
 	(timing-rest yes)
 	(not (finalAnswer ?))
 	=>
 	(assert (finalAnswer "List of cooperation games: Arizona Sunshine, SuriusSam VR, Forest, etc.")))
    
 (defrule trial-games ""
-	(high-cost no)
-	(low-cost no)
+	(low-time no)
+	(round-game no)
 	(not (finalAnswer ?))
 	=>
 	(assert (finalAnswer "List of Trial Demo Games: Appolo 11 HD, Rick and Morty VR, etc.")))
    
 (defrule simulators-games ""
-	(or (low-cost yes)
-	(high-cost yes))
+	(or (round-game yes)
+	(low-time yes))
 	(timing-rest no)
 	(not (finalAnswer ?))
 	=>
