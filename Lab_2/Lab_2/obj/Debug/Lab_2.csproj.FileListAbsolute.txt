@@ -17,3 +17,30 @@ D:\7 семестр\Интеллектуальные системы и Web\FuckT
 D:\7 семестр\Интеллектуальные системы и Web\FuckThisLife\Lab_2\Lab_2\obj\Debug\Lab_2.Form1.resources
 D:\7 семестр\Интеллектуальные системы и Web\FuckThisLife\Lab_2\Lab_2\obj\Debug\Lab_2.Properties.Resources.resources
 D:\7 семестр\Интеллектуальные системы и Web\FuckThisLife\Lab_2\Lab_2\obj\Debug\Lab_2.csproj.GenerateResource.Cache
+F:\7 семестр\Интелектуальные системы\Lab_2\Lab_2\obj\Debug\Lab_2.csprojAssemblyReference.cache
+F:\7 семестр\Интелектуальные системы\Lab_2\Lab_2\obj\Debug\Lab_2.Form1.resources
+F:\7 семестр\Интелектуальные системы\Lab_2\Lab_2\obj\Debug\Lab_2.Properties.Resources.resources
+F:\7 семестр\Интелектуальные системы\Lab_2\Lab_2\obj\Debug\Lab_2.csproj.GenerateResource.cache
+F:\7 семестр\Интелектуальные системы\Lab_2\Lab_2\obj\Debug\Lab_2.exe
+F:\7 семестр\Интелектуальные системы\Lab_2\Lab_2\obj\Debug\Lab_2.pdb
+F:\7 семестр\Интелектуальные системы\Lab_2\Lab_2\bin\Debug\Lab_2.exe.config
+F:\7 семестр\Интелектуальные системы\Lab_2\Lab_2\bin\Debug\Lab_2.exe
+F:\7 семестр\Интелектуальные системы\Lab_2\Lab_2\bin\Debug\Lab_2.pdb
+D:\7 семестр\Интелектуальные системы\Lab_2\Lab_2\bin\Debug\Lab_2.exe.config
+D:\7 семестр\Интелектуальные системы\Lab_2\Lab_2\obj\Debug\Lab_2.exe
+D:\7 семестр\Интелектуальные системы\Lab_2\Lab_2\obj\Debug\Lab_2.pdb
+D:\7 семестр\Интелектуальные системы\Lab_2\Lab_2\bin\Debug\Lab_2.exe
+D:\7 семестр\Интелектуальные системы\Lab_2\Lab_2\bin\Debug\Lab_2.pdb
+D:\7 семестр\Интелектуальные системы\Lab_2\Lab_2\obj\Debug\Lab_2.csprojResolveAssemblyReference.cache
+D:\7 семестр\Интелектуальные системы\Lab_2\Lab_2\obj\Debug\Lab_2.Form1.resources
+D:\7 семестр\Интелектуальные системы\Lab_2\Lab_2\obj\Debug\Lab_2.Properties.Resources.resources
+D:\7 семестр\Интелектуальные системы\Lab_2\Lab_2\obj\Debug\Lab_2.csproj.GenerateResource.Cache
+G:\7 семестр\Интелектуальные системы\Lab_2\Lab_2\bin\Debug\Lab_2.exe.config
+G:\7 семестр\Интелектуальные системы\Lab_2\Lab_2\bin\Debug\Lab_2.exe
+G:\7 семестр\Интелектуальные системы\Lab_2\Lab_2\bin\Debug\Lab_2.pdb
+G:\7 семестр\Интелектуальные системы\Lab_2\Lab_2\obj\Debug\Lab_2.csprojAssemblyReference.cache
+G:\7 семестр\Интелектуальные системы\Lab_2\Lab_2\obj\Debug\Lab_2.Form1.resources
+G:\7 семестр\Интелектуальные системы\Lab_2\Lab_2\obj\Debug\Lab_2.Properties.Resources.resources
+G:\7 семестр\Интелектуальные системы\Lab_2\Lab_2\obj\Debug\Lab_2.csproj.GenerateResource.cache
+G:\7 семестр\Интелектуальные системы\Lab_2\Lab_2\obj\Debug\Lab_2.exe
+G:\7 семестр\Интелектуальные системы\Lab_2\Lab_2\obj\Debug\Lab_2.pdb

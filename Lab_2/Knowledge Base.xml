@@ -1,15 +1,64 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Rules>
-  <Rule name="Проверка 1">
-    <ancendant>Анцендент проверки 1</ancendant>
-    <consequent>Консеквент проверки 1</consequent>
+  <Rule name="Проверка">
+    <antecedent>
+		<and>
+			<or>
+				<fact>fact_1</fact> 
+				<fact>fact_2</fact> 
+				<and>
+					<fact>fact_3</fact> 
+					<fact>fact_4</fact> 
+				</and>
+				<or>
+					<fact>fact_5</fact> 
+					<fact>fact_6</fact> 
+					<and>
+						<fact>fact_7</fact> 
+						<fact>fact_8</fact> 
+					</and>
+				</or>
+			</or>
+			<fact>fact_9</fact>
+		</and>
+	</antecedent>
+    <consequent>плохо-переключаются-скорости: Скорости переключаются плохо?</consequent>
   </Rule>
-  <Rule name="Проверка 6">
-    <ancendant>Анцендент проверки 6</ancendant>
-    <consequent>Консеквент проверки 6</consequent>
+  <Rule name="Правило 1">
+    <antecedent>
+		<not>невозможно-включить-обратный-ход</not>
+	</antecedent>
+    <consequent>невозможно-включить-обратный-ход: Невозможно включить обратный ход?</consequent>
   </Rule>
-  <Rule name="Проверка 8">
-    <ancendant>Анцендент проверки 8</ancendant>
-    <consequent>Консеквент проверки 8</consequent>
+  <Rule name="Правило 2">
+    <antecedent>плохо-переключаются-скорости: да, невозможно-включить-обратный-ход: да</antecedent>
+    <consequent>неисправна-коробка-передач: да</consequent>
+  </Rule>
+  <Rule name="Правило 3">
+    <antecedent>not автомобиль-плохо-набирает-скорость</antecedent>
+    <consequent>автомобиль-плохо-набирает-скорость: Автомобиль плохо набирает скорость?</consequent>
+  </Rule>
+  <Rule name="Правило 4">
+    <antecedent>not мотор-часто-глохнет</antecedent>
+    <consequent>мотор-часто-глохнет: Мотор часто глохнет?</consequent>
+  </Rule>
+  <Rule name="Правило 5">
+    <antecedent>автомобиль-плохо-набирает-скорость: да, мотор-часто-глохнет: да</antecedent>
+    <consequent>неисправный-топливный-насос: да</consequent>
+  </Rule>
+  <Rule name="Правило 6">
+    <antecedent>
+		<or>автомобиль-плохо-набирает-скорость: да; мотор-часто-глохнет: да; fact_2, fact_3; <or>fact_4; fact_5; fact_6, fact_7</or></or>, fact_1
+	</antecedent>
+    <consequent>неисправный-топливный-насос: да</consequent>
+  </Rule>
+  <Rule name="Починить машину">
+    <antecedent>or(неисправна-коробка-передач: да; неисправный-топливный-насос: да)</antecedent>
+    <consequent>Автомобиль нуждается в ремонте.</consequent>
+  </Rule>
+  <Rule name="Продать машину">
+    <antecedent>неисправна-коробка-передач: да, неисправный-топливный-насос: да</antecedent>
+    <consequent>Ваш автомобиль уже ничто не спасет, продавайте.</consequent>
   </Rule>
 </Rules>
+

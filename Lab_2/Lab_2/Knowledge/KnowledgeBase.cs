@@ -1,18 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using System.Xml;
+using System.Linq;
 using System.Xml.Linq;
 
 namespace Lab_2
 {
     class KnowledgeBase
     {
-        //Знания хранятся в виде списка правил в xml(json)
-        //Этот класс будет работать с xml(json)
-
         public List<Rule> Rules { get; set; }
 
         public KnowledgeBase()
@@ -42,14 +36,14 @@ namespace Lab_2
 
                 foreach (XmlNode childNode in xNode.ChildNodes)
                 {
-                    if (childNode.Name == "ancendant")
+                    if (childNode.Name == "antecedent")
                     {
-                        rule.Ancendant = childNode.InnerText;
+                        rule.Antecedent = childNode;
                     }
 
                     if (childNode.Name == "consequent")
                     {
-                        rule.Consequent = childNode.InnerText;
+                        rule.Consequent = new string[] { childNode.InnerText };
                     }
                 }
 
@@ -66,7 +60,7 @@ namespace Lab_2
             {
                 XElement xRule = new XElement("Rule");
                 xRule.Add(new XAttribute("name", rule.Name));
-                xRule.Add(new XElement("ancendant", rule.Ancendant));
+                xRule.Add(new XElement("antecedent", rule.Antecedent));
                 xRule.Add(new XElement("consequent", rule.Consequent));
                 Rules.Add(xRule);
             }
