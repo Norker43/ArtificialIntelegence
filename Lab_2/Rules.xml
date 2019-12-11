@@ -19,7 +19,7 @@
 		<antecedent>
 			<or>
 				<fact>story-games: yes</fact>
-				<fact>game-mode: yes</fact>
+				<fact>coop-mode: yes</fact>
 			</or>
 		</antecedent>
 		<consequent>story-coop: yes"</consequent>
@@ -28,7 +28,7 @@
 		<antecedent>
 			<and>
 				<fact>story-games: no</fact>
-				<fact>game-mode: no</fact>
+				<fact>coop-mode: no</fact>
 			</and>
 		</antecedent>
 		<consequent>story-coop: no</consequent>
@@ -82,17 +82,17 @@
 	</Rule>
 	<Rule name="determine-survival-games">
 		<antecedent>
-			<or>
+			<and>
 				<fact>vest-problem: no</fact>
 				<fact>violence: no</fact>
-			</or>
+			</and>
 		</antecedent>
 		<consequent>survival-games: no</consequent>
 	</Rule>
 	<Rule name="round-game">
 		<antecedent>
 			<and>
-				<fact>low-time: no</fact>
+				<fact>low-time: no</fact>			
 				<or>
 					<fact>survival-games: yes</fact>
 					<and>
@@ -137,11 +137,13 @@
 	</Rule>
 	<Rule name="coop-games">
 		<antecedent>
-			<or>
-				<fact>round-game: yes</fact>
-				<fact>low-time: yes</fact>
+			<and>
+				<or>
+					<fact>round-game: yes</fact>
+					<fact>low-time: yes</fact>
+				</or>
 				<fact>timing-rest: no</fact>
-			</or>
+			</and>
 		</antecedent>
 		<consequent>List of cooperation games. (Arizona Sunshine, SuriusSam VR, Forest, etc.)</consequent>
 	</Rule>
@@ -151,14 +153,14 @@
 		</antecedent>
 		<consequent>story-games: Do you want to play in story games? (yes/no)</consequent>
 	</Rule>
-	<Rule name="determine-game-mode">
+	<Rule name="determine-coop-mode">
 		<antecedent>
 			<and>
-				<fact>story-games: yes</fact>
-				<not>game-mode</not>
+				<fact>story-games: no</fact>
+				<not>coop-mode</not>
 			</and>
 		</antecedent>
-		<consequent>game-mode: Would you like to play cooperative games? (yes/no)</consequent>
+		<consequent>coop-mode: Would you like to play cooperative games? (yes/no)</consequent>
 	</Rule>
 	<Rule name="determine-dancing">
 		<antecedent>
@@ -168,7 +170,10 @@
 	</Rule>
 	<Rule name="determine-listening-music">
 		<antecedent>
-			<not>listening-music</not>
+			<and>
+				<not>listening-music</not>
+				<fact>dancing: no</fact>
+			</and>
 		</antecedent>
 		<consequent>listening-music: Do you want to listen music during the games? (yes/no)</consequent>
 	</Rule>
@@ -180,7 +185,11 @@
 	</Rule>
 	<Rule name="determine-friends">
 		<antecedent>
-			<not>friends</not>
+			<and>
+				<not>friends</not>
+				<fact>dancing: no</fact>
+				<fact>listening-music: no</fact>
+			</and>
 		</antecedent>
 		<consequent>friend: Have you come with friends? (yes/no)</consequent>
 	</Rule>
@@ -192,7 +201,10 @@
 	</Rule>
 	<Rule name="determine-violence">
 		<antecedent>
-			<not>violence</not>
+			<and>
+				<not>violence</not>
+				<fact>vest-problem: no</fact>
+			</and>
 		</antecedent>
 		<consequent>violence: Do you want to see violence? (yes/no)</consequent>
 	</Rule>

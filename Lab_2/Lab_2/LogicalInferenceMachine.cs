@@ -36,39 +36,39 @@ namespace Lab_2
             dialog.Invoke(new Action(() => dialog.AppendText("Начало" + "\n\n")));
             reasoning.Invoke(new Action(() => reasoning.AppendText("Получение фактов...\n\n")));
 
+            //workMember.Facts.Add("dancing: no");
+            //workMember.Facts.Add("listening-music: no");
+
             while (result == null)
             {
                 knowledgeBase.Rules = knowledgeBase.Rules.Except(ruleWorkList.ItWorked).ToList();
 
-                foreach(Rule rule in knowledgeBase.Rules)
+                for (int i = 0; i < knowledgeBase.Rules.Count; i++)//foreach(Rule rule in knowledgeBase.Rules)
                 {
-                    if (!(from XmlNode node in rule.Antecedent.ChildNodes select node.Name).Contains("not"))
+                    Rule rule = knowledgeBase.Rules[i];
+
+                    if (ReadChildNodesRec(rule.Antecedent.FirstChild))
                     {
-                        if (ReadChildNodesRec(rule.Antecedent.FirstChild))
+                        if (rule.Consequent[0].Contains('?'))
                         {
-                            if (!rule.Consequent[0].Contains(':'))
-                            {
-                                result = rule.Consequent[0];
-                                dialog.Invoke(new Action(() => dialog.AppendText(result + "\n\n")));
-                            }
-                            else
-                            {
-                                workMember.Facts.Add(rule.Consequent[0]);
-                            }
+                            rule.Consequent = RuleManager.Sequentialization(rule.Consequent);
+                            string waitAnswerResult = AskQuestion(rule);
 
-                            ruleWorkList.ItWorked.Add(rule);
-                            Explanation(rule);
-                            break;
+                            rule.Consequent[0] += ": " + waitAnswerResult;
+                            dialog.Invoke(new Action(() => dialog.AppendText(rule.Consequent[1] + "\n" + waitAnswerResult + "\n\n")));
+                            workMember.Facts.Add(rule.Consequent[0]);
                         }
-                    }
-                    else
-                    {
-                        rule.Consequent = RuleManager.Sequentialization(rule.Consequent);
-                        string waitAnswerResult = AskQuestion(rule);
 
-                        rule.Consequent[0] += ": " + waitAnswerResult;
-                        dialog.Invoke(new Action(() => dialog.AppendText(rule.Consequent[1] + "\n" + waitAnswerResult + "\n\n")));
-                        workMember.Facts.Add(rule.Consequent[0]);
+                        if (rule.Consequent[0].Contains('.'))
+                        {
+                            result = rule.Consequent[0];
+                            dialog.Invoke(new Action(() => dialog.AppendText(result + "\n\n")));
+                        }
+                        else
+                        {
+                            workMember.Facts.Add(rule.Consequent[0]);
+                        }
+
                         ruleWorkList.ItWorked.Add(rule);
                         Explanation(rule);
                         break;
@@ -193,7 +193,11 @@ namespace Lab_2
                 {
                     facts.Add(ReadChildNodesRec(node));
                 }
-                else
+                else if (node.Name == "not")
+                {
+                    facts.Add(ReadChildNodesRec(node));
+                }
+                else if (node.Name == "fact")
                 {
                     facts.Add(node.InnerText);
                 }
@@ -209,9 +213,24 @@ namespace Lab_2
                 return And(facts.ToArray());
             }
 
-            if (xmlNode.Name == "antecedent")
+            if (xmlNode.Name == "not")
             {
-                if (facts[0] is string && workMember.Facts.Contains(facts[0]))
+                bool contains = false;
+
+                for (int i = 0; i < workMember.Facts.Count; i++)
+                {
+                    if (!workMember.Facts[i].Contains(xmlNode.InnerText))
+                    {
+                        contains = true;
+                    }
+                    else
+                    {
+                        contains = false;
+                        break;
+                    }
+                }
+
+                if (contains)
                 {
                     return true;
                 }
