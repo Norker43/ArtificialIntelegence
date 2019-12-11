@@ -13,16 +13,13 @@
 				<fact>timing: 30</fact>
 			</or>
 		</antecedent>
-		<consequent>timing-rest: no"</consequent>
+		<consequent>timing-rest: no</consequent>
 	</Rule>
 	<Rule name="story-coop">
 		<antecedent>
-			<or>
-				<fact>story-games: yes</fact>
-				<fact>coop-mode: yes</fact>
-			</or>
+			<fact>story-games: yes</fact>
 		</antecedent>
-		<consequent>story-coop: yes"</consequent>
+		<consequent>story-coop: yes</consequent>
 	</Rule>
 	<Rule name="determine-story-coop">
 		<antecedent>
@@ -135,7 +132,7 @@
 		</antecedent>
 		<consequent>List of Trial Demo Games. (Appolo 11 HD, Rick and Morty VR, etc.)</consequent>
 	</Rule>
-	<Rule name="coop-games">
+	<Rule name="simulator-games">
 		<antecedent>
 			<and>
 				<or>
@@ -145,7 +142,7 @@
 				<fact>timing-rest: no</fact>
 			</and>
 		</antecedent>
-		<consequent>List of cooperation games. (Arizona Sunshine, SuriusSam VR, Forest, etc.)</consequent>
+		<consequent>List of simulators. BeatSiber, HotPoint, ElvinA</consequent>
 	</Rule>
 	<Rule name="determine-story-games">
 		<antecedent>

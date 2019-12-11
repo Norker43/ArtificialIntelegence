@@ -36,9 +36,6 @@ namespace Lab_2
             dialog.Invoke(new Action(() => dialog.AppendText("Начало" + "\n\n")));
             reasoning.Invoke(new Action(() => reasoning.AppendText("Получение фактов...\n\n")));
 
-            //workMember.Facts.Add("dancing: no");
-            //workMember.Facts.Add("listening-music: no");
-
             while (result == null)
             {
                 knowledgeBase.Rules = knowledgeBase.Rules.Except(ruleWorkList.ItWorked).ToList();
@@ -49,7 +46,7 @@ namespace Lab_2
 
                     if (ReadChildNodesRec(rule.Antecedent.FirstChild))
                     {
-                        if (rule.Consequent[0].Contains('?'))
+                        if (rule.Consequent[0].Contains('?')) //Добавляем факт из вопроса
                         {
                             rule.Consequent = RuleManager.Sequentialization(rule.Consequent);
                             string waitAnswerResult = AskQuestion(rule);
@@ -58,13 +55,12 @@ namespace Lab_2
                             dialog.Invoke(new Action(() => dialog.AppendText(rule.Consequent[1] + "\n" + waitAnswerResult + "\n\n")));
                             workMember.Facts.Add(rule.Consequent[0]);
                         }
-
-                        if (rule.Consequent[0].Contains('.'))
+                        else if (rule.Consequent[0].Contains('.')) //Результат
                         {
                             result = rule.Consequent[0];
                             dialog.Invoke(new Action(() => dialog.AppendText(result + "\n\n")));
                         }
-                        else
+                        else //Добавляем факт промежуточной гипотезы
                         {
                             workMember.Facts.Add(rule.Consequent[0]);
                         }
@@ -89,7 +85,7 @@ namespace Lab_2
 
             foreach (Rule rule in knowledgeBase.Rules)
             {
-                if (!rule.Consequent[0].Contains(':'))
+                if (rule.Consequent[0].Contains('.'))
                 {
                     results.Add(rule);
                 }
@@ -99,6 +95,8 @@ namespace Lab_2
 
             Rule selectedRule = new Rule();
             string name = AskQuestion();
+            #endregion
+
             foreach (Rule rule in results)
             {
                 if (rule.Name == name)
@@ -106,7 +104,6 @@ namespace Lab_2
                     selectedRule = rule;
                 }
             }
-            #endregion
 
             List<string> result = null;
 
@@ -185,15 +182,19 @@ namespace Lab_2
 
         private bool ReadChildNodesRec(XmlNode xmlNode)
         {
+            if (xmlNode.Name == "fact")
+            {
+                if (workMember.Facts.Contains(xmlNode.InnerText))
+                {
+                    return true;
+                }
+            }
+
             List<object> facts = new List<object>();
 
             foreach (XmlNode node in xmlNode.ChildNodes)
             {
-                if (node.Name == "or" || node.Name == "and")
-                {
-                    facts.Add(ReadChildNodesRec(node));
-                }
-                else if (node.Name == "not")
+                if (node.Name == "or" || node.Name == "and" || node.Name == "not")
                 {
                     facts.Add(ReadChildNodesRec(node));
                 }
@@ -215,7 +216,7 @@ namespace Lab_2
 
             if (xmlNode.Name == "not")
             {
-                bool contains = false;
+                bool contains = true;
 
                 for (int i = 0; i < workMember.Facts.Count; i++)
                 {
