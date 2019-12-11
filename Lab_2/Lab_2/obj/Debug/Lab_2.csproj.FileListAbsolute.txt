@@ -44,3 +44,12 @@ G:\7 семестр\Интелектуальные системы\Lab_2\Lab_2\ob
 G:\7 семестр\Интелектуальные системы\Lab_2\Lab_2\obj\Debug\Lab_2.csproj.GenerateResource.cache
 G:\7 семестр\Интелектуальные системы\Lab_2\Lab_2\obj\Debug\Lab_2.exe
 G:\7 семестр\Интелектуальные системы\Lab_2\Lab_2\obj\Debug\Lab_2.pdb
+C:\Study\Истомин\FuckThisLife\Lab_2\Lab_2\bin\Debug\Lab_2.exe.config
+C:\Study\Истомин\FuckThisLife\Lab_2\Lab_2\bin\Debug\Lab_2.exe
+C:\Study\Истомин\FuckThisLife\Lab_2\Lab_2\bin\Debug\Lab_2.pdb
+C:\Study\Истомин\FuckThisLife\Lab_2\Lab_2\obj\Debug\Lab_2.csprojAssemblyReference.cache
+C:\Study\Истомин\FuckThisLife\Lab_2\Lab_2\obj\Debug\Lab_2.Form1.resources
+C:\Study\Истомин\FuckThisLife\Lab_2\Lab_2\obj\Debug\Lab_2.Properties.Resources.resources
+C:\Study\Истомин\FuckThisLife\Lab_2\Lab_2\obj\Debug\Lab_2.csproj.GenerateResource.cache
+C:\Study\Истомин\FuckThisLife\Lab_2\Lab_2\obj\Debug\Lab_2.exe
+C:\Study\Истомин\FuckThisLife\Lab_2\Lab_2\obj\Debug\Lab_2.pdb
