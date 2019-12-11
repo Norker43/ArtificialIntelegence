@@ -3,6 +3,7 @@ using System.Windows.Forms;
 using System.Collections.Generic;
 using System.Xml;
 using System.Linq;
+using System.Xml.Linq;
 
 namespace Lab_2
 {
@@ -31,34 +32,47 @@ namespace Lab_2
 
         public void LogicalInferenceStart()
         {
+            string result = null;
             dialog.Invoke(new Action(() => dialog.AppendText("Начало" + "\n\n")));
             reasoning.Invoke(new Action(() => reasoning.AppendText("Получение фактов...\n\n")));
 
-            for (int i = 0; i < knowledgeBase.Rules.Count; i++)
+            while (result == null)
             {
-                Rule rule = knowledgeBase.Rules[i];
+                knowledgeBase.Rules = knowledgeBase.Rules.Except(ruleWorkList.ItWorked).ToList();
 
-                if (!(from XmlNode node in rule.Antecedent.ChildNodes select node.Name).Contains("not"))
+                foreach(Rule rule in knowledgeBase.Rules)
                 {
-                    if (ReadChildNodesRec(rule.Antecedent.FirstChild))
+                    if (!(from XmlNode node in rule.Antecedent.ChildNodes select node.Name).Contains("not"))
                     {
+                        if (ReadChildNodesRec(rule.Antecedent.FirstChild))
+                        {
+                            if (!rule.Consequent[0].Contains(':'))
+                            {
+                                result = rule.Consequent[0];
+                                dialog.Invoke(new Action(() => dialog.AppendText(result + "\n\n")));
+                            }
+                            else
+                            {
+                                workMember.Facts.Add(rule.Consequent[0]);
+                            }
 
-                        Explanation(rule);
+                            ruleWorkList.ItWorked.Add(rule);
+                            Explanation(rule);
+                            break;
+                        }
                     }
                     else
                     {
+                        rule.Consequent = RuleManager.Sequentialization(rule.Consequent);
+                        string waitAnswerResult = AskQuestion(rule);
 
+                        rule.Consequent[0] += ": " + waitAnswerResult;
+                        dialog.Invoke(new Action(() => dialog.AppendText(rule.Consequent[1] + "\n" + waitAnswerResult + "\n\n")));
+                        workMember.Facts.Add(rule.Consequent[0]);
+                        ruleWorkList.ItWorked.Add(rule);
+                        Explanation(rule);
+                        break;
                     }
-                }
-                else
-                {
-                    rule.Consequent = RuleManager.Sequentialization(rule.Consequent);
-                    string waitAnswerResult = AskQuestion(rule);
-
-                    rule.Consequent[0] += ": " + waitAnswerResult;
-                    dialog.Invoke(new Action(() => dialog.AppendText(rule.Consequent[1] + "\n" + waitAnswerResult + "\n\n")));
-                    workMember.Facts.Add(rule.Consequent[0]);
-                    Explanation(rule);
                 }
             }
 
@@ -70,13 +84,39 @@ namespace Lab_2
             dialog.Invoke(new Action(() => dialog.AppendText("Начало" + "\n\n")));
             question.Invoke(new Action(() => question.Text = "Выберите вариант."));
 
+            #region Выбор гипотезы
+            List<Rule> results = new List<Rule>();
 
+            foreach (Rule rule in knowledgeBase.Rules)
+            {
+                if (!rule.Consequent[0].Contains(':'))
+                {
+                    results.Add(rule);
+                }
+            }
+
+            answer.Invoke(new Action(() => answer.Items.AddRange((from res in results select res.Name).ToArray())));
+
+            Rule selectedRule = new Rule();
+            string name = AskQuestion();
+            foreach (Rule rule in results)
+            {
+                if (rule.Name == name)
+                {
+                    selectedRule = rule;
+                }
+            }
+            #endregion
+
+            List<string> result = null;
+
+            while (result == null)
+            {
+                knowledgeBase.Rules = knowledgeBase.Rules.Except(ruleWorkList.ItWorked).ToList();
+
+            }
 
             dialog.Invoke(new Action(() => dialog.AppendText("Конец")));
-
-            #region Управление работой обратного логического вывода
-
-            #endregion
         }
 
         private void Explanation(Rule rule)
@@ -84,6 +124,9 @@ namespace Lab_2
 
         }
 
+        #region Обход антецедента
+
+        #region Для прямого вывода
         private bool And(object[] array)
         {
             int coincedence = 0;
@@ -100,7 +143,7 @@ namespace Lab_2
 
             for (int i = 0; i < bools.Length; i++)
             {
-                if (bools.Contains(true))
+                if ((bool)bools[i])
                 {
                     coincedence++;
                 }
@@ -129,7 +172,7 @@ namespace Lab_2
                 }
             }
 
-            for (int i = 0; i < array.Length; i++)
+            for (int i = 0; i < bools.Length; i++)
             {
                 if (bools.Contains(true))
                 {
@@ -166,21 +209,35 @@ namespace Lab_2
                 return And(facts.ToArray());
             }
 
+            if (xmlNode.Name == "antecedent")
+            {
+                if (facts[0] is string && workMember.Facts.Contains(facts[0]))
+                {
+                    return true;
+                }
+            }
+
             return false;
         }
+        #endregion
+
+        #region Для обратного вывода
+
+        #endregion
+
+        #endregion
 
         #region Вспомогательные функции
         private void ResponseOptions(Rule rule)
         {
-            string[] variousAnswers = new string[1];
+            string[] variousAnswers = new string[] { "yes", "no" };
 
-            if (rule.Consequent[0].Contains("num"))
+            if (rule.Antecedent.FirstChild.Attributes.Count > 0)
             {
-                variousAnswers = new string[] { "15", "30", "60+" };
-            }
-            else
-            {
-                variousAnswers = new string[] { "Да", "Нет" };
+                if (rule.Antecedent.FirstChild.Attributes.GetNamedItem("value").Value.Contains("num"))
+                {
+                    variousAnswers = new string[] { "15", "30", "60" };
+                }
             }
 
             answer.Invoke(new Action(() => answer.Items.AddRange(variousAnswers)));
@@ -190,6 +247,16 @@ namespace Lab_2
         {
             ResponseOptions(rule);
             question.Invoke(new Action(() => question.Text = rule.Consequent[1]));
+            UserResponce = "";
+            CheckAnswer = true;
+            while (CheckAnswer) { }
+            UserResponce = UserResponce.ToLower();
+
+            return UserResponce;
+        }
+
+        private string AskQuestion()
+        {
             UserResponce = "";
             CheckAnswer = true;
             while (CheckAnswer) { }

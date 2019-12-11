@@ -5,11 +5,11 @@ namespace Lab_2
     class RuleWorkList
     {
         WorkMember workMember;
-        List<Rule> itWorked;
+        public List<Rule> ItWorked;
 
         public RuleWorkList(ref WorkMember workMember)
         {
-            itWorked = new List<Rule>();
+            ItWorked = new List<Rule>();
             this.workMember = workMember;
         }
     }
