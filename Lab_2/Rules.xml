@@ -125,10 +125,10 @@
 	</Rule>
 	<Rule name="trial-games">
 		<antecedent>
-			<and>
+			<or>
 				<fact>low-time: no</fact>
 				<fact>round-game: no</fact>
-			</and>
+			</or>
 		</antecedent>
 		<consequent>List of Trial Demo Games. (Appolo 11 HD, Rick and Morty VR, etc.)</consequent>
 	</Rule>
