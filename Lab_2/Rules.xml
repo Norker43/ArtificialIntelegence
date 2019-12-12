@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Rules>
-	<Rule name="yes-timing-rest-rule">
+	<Rule name="yes-tming-rest-rule">
 		<antecedent>
 			<fact>timing: 60</fact>
 		</antecedent>
-		<consequent>timing-rest: yes</consequent>
+		<consequent>tming-rest: yes</consequent>
 	</Rule>
-	<Rule name="no-timing-rest-rule">
+	<Rule name="no-tming-rest-rule">
 		<antecedent>
 			<or>
 				<fact>timing: 15</fact> 
 				<fact>timing: 30</fact>
 			</or>
 		</antecedent>
-		<consequent>timing-rest: no</consequent>
+		<consequent>tming-rest: no</consequent>
 	</Rule>
 	<Rule name="story-coop">
 		<antecedent>
@@ -118,7 +118,7 @@
 		<antecedent>
 			<and>
 				<fact>low-time: yes</fact>
-				<fact>timing-rest: yes</fact>
+				<fact>tming-rest: yes</fact>
 			</and>
 		</antecedent>
 		<consequent>List of cooperation games. (Arizona Sunshine, SuriusSam VR, Forest, etc.)</consequent>
@@ -126,7 +126,7 @@
 	<Rule name="trial-games">
 		<antecedent>
 			<or>
-				<fact>low-time: no</fact>
+				<fact>survival-games: no</fact>
 				<fact>round-game: no</fact>
 			</or>
 		</antecedent>
@@ -139,7 +139,7 @@
 					<fact>round-game: yes</fact>
 					<fact>low-time: yes</fact>
 				</or>
-				<fact>timing-rest: no</fact>
+				<fact>tming-rest: no</fact>
 			</and>
 		</antecedent>
 		<consequent>List of simulators. BeatSiber, HotPoint, ElvinA</consequent>
