@@ -1,0 +1,9 @@
+F:\7 семестр\Интеллектуальные системы\Lab_3\Lab_3\bin\Debug\Lab_3.exe.config
+F:\7 семестр\Интеллектуальные системы\Lab_3\Lab_3\bin\Debug\Lab_3.exe
+F:\7 семестр\Интеллектуальные системы\Lab_3\Lab_3\bin\Debug\Lab_3.pdb
+F:\7 семестр\Интеллектуальные системы\Lab_3\Lab_3\obj\Debug\Lab_3.csprojAssemblyReference.cache
+F:\7 семестр\Интеллектуальные системы\Lab_3\Lab_3\obj\Debug\Lab_3.Form1.resources
+F:\7 семестр\Интеллектуальные системы\Lab_3\Lab_3\obj\Debug\Lab_3.Properties.Resources.resources
+F:\7 семестр\Интеллектуальные системы\Lab_3\Lab_3\obj\Debug\Lab_3.csproj.GenerateResource.cache
+F:\7 семестр\Интеллектуальные системы\Lab_3\Lab_3\obj\Debug\Lab_3.exe
+F:\7 семестр\Интеллектуальные системы\Lab_3\Lab_3\obj\Debug\Lab_3.pdb

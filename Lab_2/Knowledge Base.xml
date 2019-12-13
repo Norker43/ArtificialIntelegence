@@ -1,63 +1,208 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Rules>
-	<Rule name="Правило 5">
+	<Rule name="yes-tming-rest-rule">
+		<antecedent>
+			<fact>timing: 60</fact>
+		</antecedent>
+		<consequent>tming-rest: yes</consequent>
+	</Rule>
+	<Rule name="no-tming-rest-rule">
 		<antecedent>
 			<or>
-				<fact>плохо-переключаются-скорости: да</fact>
-				<fact>невозможно-включить-обратный-ход: да</fact>
+				<fact>timing: 15</fact> 
+				<fact>timing: 30</fact>
 			</or>
 		</antecedent>
-		<consequent>неисправна-коробка-передач: да</consequent>
+		<consequent>tming-rest: no</consequent>
 	</Rule>
-	<Rule name="Правило 6">
+	<Rule name="story-coop">
 		<antecedent>
-			<or>
-				<fact>автомобиль-плохо-набирает-скорость: да</fact>
-				<fact>мотор-часто-глохнет: да</fact>
-			</or>
+			<fact>story-games: yes</fact>
 		</antecedent>
-		<consequent>неисправен-топливный-насос: да</consequent>
+		<consequent>story-coop: yes</consequent>
 	</Rule>
-	<Rule name="Продажа">
+	<Rule name="determine-story-coop">
 		<antecedent>
 			<and>
-				<fact>неисправен-топливный-насос: да</fact>
-				<fact>неисправна-коробка-передач: да</fact>
+				<fact>story-games: no</fact>
+				<fact>coop-mode: no</fact>
 			</and>
 		</antecedent>
-		<consequent>Ее уже ничто не спасет. Продавайте...</consequent>
+		<consequent>story-coop: no</consequent>
 	</Rule>
-	<Rule name="Ремонт">
+	<Rule name="rhythm-games">
 		<antecedent>
 			<or>
-				<fact>неисправен-топливный-насос: да</fact>
-				<fact>неисправна-коробка-передач: да</fact>
+				<fact>dancing: yes</fact>
+				<fact>listening-music: yes</fact>
+				<fact>friends: yes</fact>
 			</or>
 		</antecedent>
-		<consequent>Надо чинить.</consequent>
+		<consequent>rhythm-games: yes</consequent>
 	</Rule>
-	<Rule name="Праивло 1">
+	<Rule name="determine-rhythm-games">
 		<antecedent>
-			<not>плохо-переключаются-скорости</not>
+			<and>
+				<fact>dancing: no</fact>
+				<fact>listening-music: no</fact>
+				<fact>friends: no</fact>
+			</and>
 		</antecedent>
-		<consequent>плохо-переключаются-скорости: Скорости переключаются плохо?</consequent>
+		<consequent>rhythm-games: no</consequent>
 	</Rule>
-	<Rule name="Правило 2">
+	<Rule name="low-time">
 		<antecedent>
-			<not>невозможно-включить-обратный-ход</not>
+			<and>
+				<fact>story-games: yes</fact> 
+				<fact>rhythm-games: yes</fact>
+			</and>
 		</antecedent>
-		<consequent>невозможно-включить-обратный-ход: Невозможно включить обратный ход?</consequent>
+		<consequent>low-time: yes</consequent>
 	</Rule>
-	<Rule name="Правило 3">
+	<Rule name="determine-low-time">
 		<antecedent>
-			<not>автомобиль-плохо-набирает-скорость</not>
+			<and>
+				<fact>story-games: no</fact>
+				<fact>rhythm-games: no</fact>
+			</and>
 		</antecedent>
-		<consequent>автомобиль-плохо-набирает-скорость: Автомобиль плохо набирает скорость?</consequent>
+		<consequent>low-time: no</consequent>
 	</Rule>
-	<Rule name="Правило 4">
+	<Rule name="survival-games">
 		<antecedent>
-			<not>мотор-часто-глохнет</not>
+			<or>
+				<fact>vest-problem: yes</fact>
+				<fact>violence: yes</fact>
+			</or>
 		</antecedent>
-		<consequent>мотор-часто-глохнет: Мотор часто глохнет?</consequent>
+		<consequent>survival-games: yes</consequent>
+	</Rule>
+	<Rule name="determine-survival-games">
+		<antecedent>
+			<and>
+				<fact>vest-problem: no</fact>
+				<fact>violence: no</fact>
+			</and>
+		</antecedent>
+		<consequent>survival-games: no</consequent>
+	</Rule>
+	<Rule name="round-game">
+		<antecedent>
+			<and>
+				<fact>low-time: no</fact>			
+				<or>
+					<fact>survival-games: yes</fact>
+					<and>
+						<fact>rhythm-games: yes</fact>
+						<fact>story-games: no</fact>
+					</and>
+					<and>
+						<fact>story-games: yes</fact>
+						<fact>rhythm-games: no</fact>
+					</and>
+				</or>
+			</and>
+		</antecedent>
+		<consequent>round-game: yes</consequent>
+	</Rule>
+	<Rule name="determine-round-game">
+		<antecedent>
+			<and>
+				<fact>low-time: no</fact>
+				<fact>survival-games: no</fact>
+			</and>
+		</antecedent>
+		<consequent>round-game: no</consequent>
+	</Rule>
+	<Rule name="coop-games">
+		<antecedent>
+			<and>
+				<fact>low-time: yes</fact>
+				<fact>tming-rest: yes</fact>
+			</and>
+		</antecedent>
+		<consequent>List of cooperation games. (Arizona Sunshine, SuriusSam VR, Forest, etc.)</consequent>
+	</Rule>
+	<Rule name="trial-games">
+		<antecedent>
+			<or>
+				<fact>survival-games: no</fact>
+				<fact>round-game: no</fact>
+			</or>
+		</antecedent>
+		<consequent>List of Trial Demo Games. (Appolo 11 HD, Rick and Morty VR, etc.)</consequent>
+	</Rule>
+	<Rule name="simulator-games">
+		<antecedent>
+			<and>
+				<or>
+					<fact>round-game: yes</fact>
+					<fact>low-time: yes</fact>
+				</or>
+				<fact>tming-rest: no</fact>
+			</and>
+		</antecedent>
+		<consequent>List of simulators. BeatSiber, HotPoint, ElvinA</consequent>
+	</Rule>
+	<Rule name="determine-story-games">
+		<antecedent>
+			<not>story-games</not>
+		</antecedent>
+		<consequent>story-games: Do you want to play in story games? (yes/no)</consequent>
+	</Rule>
+	<Rule name="determine-coop-mode">
+		<antecedent>
+			<and>
+				<fact>story-games: no</fact>
+				<not>coop-mode</not>
+			</and>
+		</antecedent>
+		<consequent>coop-mode: Would you like to play cooperative games? (yes/no)</consequent>
+	</Rule>
+	<Rule name="determine-dancing">
+		<antecedent>
+			<not>dancing</not>
+		</antecedent>
+		<consequent>dancing: Would you like to dance during the games? (yes/no)</consequent>
+	</Rule>
+	<Rule name="determine-listening-music">
+		<antecedent>
+			<and>
+				<not>listening-music</not>
+				<fact>dancing: no</fact>
+			</and>
+		</antecedent>
+		<consequent>listening-music: Do you want to listen music during the games? (yes/no)</consequent>
+	</Rule>
+	<Rule name="determine-timing">
+		<antecedent>
+			<not value="num">timing</not>
+		</antecedent>
+		<consequent>timing: How much time do you plan to spend in a VR-club? (15m, 30m, 60m)</consequent>
+	</Rule>
+	<Rule name="determine-friends">
+		<antecedent>
+			<and>
+				<not>friends</not>
+				<fact>dancing: no</fact>
+				<fact>listening-music: no</fact>
+			</and>
+		</antecedent>
+		<consequent>friend: Have you come with friends? (yes/no)</consequent>
+	</Rule>
+	<Rule name="determine-vest-problem">
+		<antecedent>
+			<not>vest-problem</not>
+		</antecedent>
+		<consequent>vest-problem: Do you have a problem with the vestibular apparatus? (yes/no)</consequent>
+	</Rule>
+	<Rule name="determine-violence">
+		<antecedent>
+			<and>
+				<not>violence</not>
+				<fact>vest-problem: no</fact>
+			</and>
+		</antecedent>
+		<consequent>violence: Do you want to see violence? (yes/no)</consequent>
 	</Rule>
 </Rules>
