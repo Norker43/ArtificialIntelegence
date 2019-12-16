@@ -53,7 +53,7 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Knoledge\Frame\Frame.cs" />
-    <Compile Include="Knoledge\KnwoledgeBase.cs" />
+    <Compile Include="Knoledge\KnowledgeBase.cs" />
     <Compile Include="LogicalInferenceMachine.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

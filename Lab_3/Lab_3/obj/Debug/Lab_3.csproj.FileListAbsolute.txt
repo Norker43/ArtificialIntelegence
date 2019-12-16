@@ -7,3 +7,12 @@ F:\7 семестр\Интеллектуальные системы\Lab_3\Lab_3\
 F:\7 семестр\Интеллектуальные системы\Lab_3\Lab_3\obj\Debug\Lab_3.csproj.GenerateResource.cache
 F:\7 семестр\Интеллектуальные системы\Lab_3\Lab_3\obj\Debug\Lab_3.exe
 F:\7 семестр\Интеллектуальные системы\Lab_3\Lab_3\obj\Debug\Lab_3.pdb
+G:\7 семестр\Интеллектуальные системы\Lab_3\Lab_3\bin\Debug\Lab_3.exe.config
+G:\7 семестр\Интеллектуальные системы\Lab_3\Lab_3\bin\Debug\Lab_3.exe
+G:\7 семестр\Интеллектуальные системы\Lab_3\Lab_3\bin\Debug\Lab_3.pdb
+G:\7 семестр\Интеллектуальные системы\Lab_3\Lab_3\obj\Debug\Lab_3.csprojAssemblyReference.cache
+G:\7 семестр\Интеллектуальные системы\Lab_3\Lab_3\obj\Debug\Lab_3.Form1.resources
+G:\7 семестр\Интеллектуальные системы\Lab_3\Lab_3\obj\Debug\Lab_3.Properties.Resources.resources
+G:\7 семестр\Интеллектуальные системы\Lab_3\Lab_3\obj\Debug\Lab_3.csproj.GenerateResource.cache
+G:\7 семестр\Интеллектуальные системы\Lab_3\Lab_3\obj\Debug\Lab_3.exe
+G:\7 семестр\Интеллектуальные системы\Lab_3\Lab_3\obj\Debug\Lab_3.pdb

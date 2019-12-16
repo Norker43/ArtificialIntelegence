@@ -12,7 +12,7 @@ namespace Lab_3
 {
     public partial class Form1 : Form
     {
-        KnoledgeBase knoledgeBase;
+        KnowledgeBase knoledgeBase;
         LogicalInferenceMachine inferenceMachine;
 
         public Form1()
@@ -29,7 +29,7 @@ namespace Lab_3
             }
             path.SelectionStart = path.Text.Length - 1;
 
-            knoledgeBase = new KnoledgeBase()
+            knoledgeBase = new KnowledgeBase()
             {
                 FrameTree = frames_tree
             };

@@ -9,12 +9,12 @@ namespace Lab_3
 {
     class LogicalInferenceMachine
     {
-        private KnoledgeBase knoledgeBase;
+        private KnowledgeBase knoledgeBase;
 
         public DataGridView DialogDGV { get; set; }
         public RichTextBox Reasoning { get; set; }
 
-        public LogicalInferenceMachine(KnoledgeBase knoledgeBase)
+        public LogicalInferenceMachine(KnowledgeBase knoledgeBase)
         {
             this.knoledgeBase = knoledgeBase;
         }
