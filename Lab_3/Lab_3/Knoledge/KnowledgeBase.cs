@@ -83,70 +83,52 @@ namespace Lab_3
             frames.AddRange(Frames);
             List<Frame> workedFrames = new List<Frame>();
 
-            TreeNode root = new TreeNode();
             for (int i = 0; i < frames.Count; i++)
             {
                 if (frames[i].Parent == null)
                 {
-                    root = new TreeNode(frames[i].Name);
-                    FrameTree.Nodes.Add(root);
+                    FrameTree.Nodes.Add(frames[i].Name);
                     workedFrames.Add(frames[i]);
                 }
             }
+
+            TreeNodeCollection nodes = FrameTree.Nodes;
+            Stack<TreeNodeCollection> stack = new Stack<TreeNodeCollection>();
 
             while (frames.Count != 0)
             {
                 frames = frames.Except(workedFrames).ToList();
 
-                for (int i = 0; i < FrameTree.Nodes.Count; i++)
+                for (int i = 0; i < nodes.Count; i++)
                 {
-                    root = FrameTree.Nodes[i];
-                    List<Frame> childs = FindeChilds(frames, root);
-                    root = AddChildsInRootNodes(root, childs);
-                    workedFrames.AddRange(childs);
+                    TreeNode node = nodes[i];
 
-                    Stack<TreeNode> stack = new Stack<TreeNode>();
-                    while (root != null || root.Nodes.Count != 0)
+                    if (node.Nodes.Count == 0)
                     {
-                        if (stack.Count != 0)
-                        {
-                            root = stack.Pop();
-                        }
+                        List<Frame> childs = (from frame in frames
+                                              where frame.Parent.Name == node.Text
+                                              select frame).ToList();
+                        node.Nodes.AddRange((from child in childs
+                                             select new TreeNode()
+                                             {
+                                                 Text = child.Name
+                                             }).ToArray());
+                        workedFrames.AddRange(childs);
 
-                        while (root != null)
+                        if (childs.Count != 0)
                         {
-                            if (root.Nodes.Count != 0)
-                            {
-                                stack.Push(root);
-                                //root = root.Nodes
-                            }
-                            else
-                            {
-                                
-                            }
+                            stack.Push(nodes);
+                            nodes = node.Nodes;
+                            break;
                         }
+                    }
+
+                    if (i == nodes.Count - 1)
+                    {
+                        nodes = stack.Pop();
                     }
                 }
             }
-        }
-
-        private List<Frame> FindeChilds(List<Frame> frames, TreeNode root)
-        {
-            List<Frame> childs = (from frame in frames
-                                  where frame.Parent.Name == root.Text
-                                  select frame).ToList();
-            return childs;
-        }
-
-        private TreeNode AddChildsInRootNodes(TreeNode root, List<Frame> childs)
-        {
-            root.Nodes.AddRange((from child in childs
-                                 select new TreeNode()
-                                 {
-                                     Text = child.Name
-                                 }).ToArray());
-
-            return root;
         }
     }
 }

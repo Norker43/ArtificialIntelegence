@@ -11,5 +11,12 @@ namespace Lab_3
         public string Name { get; set; }
         public Frame Parent { get; set; }
         public List<Slot> Slots { get; set; }
+        public List<Frame> Childs { get; set; }
+
+        public Frame()
+        {
+            Slots = new List<Slot>();
+            Childs = new List<Frame>();
+        }
     }
 }

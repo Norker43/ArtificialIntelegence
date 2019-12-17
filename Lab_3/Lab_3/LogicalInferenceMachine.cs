@@ -23,6 +23,7 @@ namespace Lab_3
         {
             List<Frame> frames = (from frame in knoledgeBase.Frames select frame).ToList();
 
+
         }
     }
 }

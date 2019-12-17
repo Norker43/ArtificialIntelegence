@@ -162,4 +162,58 @@
 			<demon></demon>
 		</Slot>
 	</Frame>
+	<Frame name="Test_1" parent="Toolkit by Petrov I.I.">
+		<Slot name="Author">
+			<value>Ivanov I.I.</value>
+			<datatype>text</datatype>
+			<demon></demon>
+		</Slot>
+		<Slot name="Name">
+			<value>Laboratory works</value>
+			<datatype>text</datatype>
+			<demon></demon>
+		</Slot>
+		<Slot name="Count pages">
+			<value>38</value>
+			<datatype>integer</datatype>
+			<demon></demon>
+		</Slot>
+		<Slot name="Binding type">
+			<value>brochure</value>
+			<datatype>text</datatype>
+			<demon></demon>
+		</Slot>
+		<Slot name="Preparation time">
+			<value>38</value>
+			<datatype>integer</datatype>
+			<demon></demon>
+		</Slot>
+	</Frame>
+	<Frame name="Test_2" parent="Toolkit by Petrov I.I.">
+		<Slot name="Author">
+			<value>Ivanov I.I.</value>
+			<datatype>text</datatype>
+			<demon></demon>
+		</Slot>
+		<Slot name="Name">
+			<value>Laboratory works</value>
+			<datatype>text</datatype>
+			<demon></demon>
+		</Slot>
+		<Slot name="Count pages">
+			<value>38</value>
+			<datatype>integer</datatype>
+			<demon></demon>
+		</Slot>
+		<Slot name="Binding type">
+			<value>brochure</value>
+			<datatype>text</datatype>
+			<demon></demon>
+		</Slot>
+		<Slot name="Preparation time">
+			<value>38</value>
+			<datatype>integer</datatype>
+			<demon></demon>
+		</Slot>
+	</Frame>
 </Frames>

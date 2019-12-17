@@ -165,7 +165,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(489, 293);
+            this.tabPage1.Size = new System.Drawing.Size(502, 293);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Диалог";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -233,7 +233,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(489, 293);
+            this.tabPage2.Size = new System.Drawing.Size(502, 293);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Объяснение";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -274,11 +274,11 @@
             this.dataGridViewTextBoxColumn3,
             this.dataGridViewTextBoxColumn4});
             this.edit_dvg.Enabled = false;
-            this.edit_dvg.Location = new System.Drawing.Point(98, 0);
+            this.edit_dvg.Location = new System.Drawing.Point(239, 0);
             this.edit_dvg.Name = "edit_dvg";
             this.edit_dvg.RowHeadersVisible = false;
             this.edit_dvg.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.edit_dvg.Size = new System.Drawing.Size(404, 293);
+            this.edit_dvg.Size = new System.Drawing.Size(263, 293);
             this.edit_dvg.TabIndex = 2;
             // 
             // dataGridViewTextBoxColumn1
@@ -313,7 +313,7 @@
             this.frames_tree.Enabled = false;
             this.frames_tree.Location = new System.Drawing.Point(0, 0);
             this.frames_tree.Name = "frames_tree";
-            this.frames_tree.Size = new System.Drawing.Size(92, 293);
+            this.frames_tree.Size = new System.Drawing.Size(233, 293);
             this.frames_tree.TabIndex = 0;
             // 
             // Form1
