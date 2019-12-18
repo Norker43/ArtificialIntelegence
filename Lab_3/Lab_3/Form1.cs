@@ -12,7 +12,8 @@ namespace Lab_3
 {
     public partial class Form1 : Form
     {
-        KnowledgeBase knoledgeBase;
+        Frame viewFrame;
+        KnowledgeBase knowledgeBase;
         LogicalInferenceMachine inferenceMachine;
 
         public Form1()
@@ -29,11 +30,11 @@ namespace Lab_3
             }
             path.SelectionStart = path.Text.Length - 1;
 
-            knoledgeBase = new KnowledgeBase()
+            knowledgeBase = new KnowledgeBase()
             {
                 FrameTree = frames_tree
             };
-            knoledgeBase.LoadOut(path.Text);
+            knowledgeBase.LoadOut(path.Text);
 
             #region EnabledControlsInit
             begin.Enabled = true;
@@ -46,23 +47,99 @@ namespace Lab_3
         {
             EnabledControls(false);
             helper.Text = "Заполните, что можете.";
+
+            viewFrame = new Frame()
+            {
+                Name = "UserFrame",
+                Slots = (from slot in knowledgeBase.Frames[0].Slots
+                         select slot).ToList()
+            };
+
+            for (int i = 0; i < viewFrame.Slots.Count; i++)
+            {
+                dialog_dvg.Rows.Add(viewFrame.Slots[i].Name, "",
+                    viewFrame.Slots[i].DataType, viewFrame.Slots[i].Demon);
+            }
         }
 
         private void discard_Click(object sender, EventArgs e)
         {
             EnabledControls(true);
             helper.Text = "";
+            dialog_dvg.Rows.Clear();
+            viewFrame = null;
             inferenceMachine = null;
         }
 
         private void apply_Click(object sender, EventArgs e)
         {
-            inferenceMachine = new LogicalInferenceMachine(knoledgeBase)
+            inferenceMachine = new LogicalInferenceMachine(knowledgeBase)
             {
                 DialogDGV = dialog_dvg,
                 Reasoning = reasoning
             };
-            inferenceMachine.LogicalInferenceStart();
+
+            for (int i = 0; i < dialog_dvg.Rows.Count; i++)
+            {
+                viewFrame.Slots[i].Value = dialog_dvg.Rows[i].Cells[1].Value.ToString();
+            }
+
+            inferenceMachine.LogicalInferenceStart(viewFrame);
+        }
+
+        private void save_Click(object sender, EventArgs e)
+        {
+            List<Slot> slots = new List<Slot>();
+
+            for (int i = 0; i < edit_dvg.Rows.Count; i++)
+            {
+                if (edit_dvg.Rows[i].Cells[0].Value != null)
+                {
+                    slots.Add(new Slot()
+                    {
+                        Name = edit_dvg.Rows[i].Cells[0].Value.ToString(),
+                        Value = edit_dvg.Rows[i].Cells[1].Value.ToString(),
+                        DataType = edit_dvg.Rows[i].Cells[2].Value.ToString(),
+                        Demon = edit_dvg.Rows[i].Cells[3].Value.ToString()
+                    });
+                }
+            }
+            viewFrame.Slots = slots;
+
+            for (int i = 0; i < knowledgeBase.Frames.Count; i++)
+            {
+                if (knowledgeBase.Frames[i].Name == viewFrame.Name)
+                {
+                    knowledgeBase.Frames[i] = viewFrame;
+                }
+            }
+
+            knowledgeBase.LoadIn(path.Text);
+            save.Enabled = false;
+        }
+
+        private void frames_tree_NodeMouseDoubleClick(object sender, TreeNodeMouseClickEventArgs e)
+        {
+            edit_dvg.Rows.Clear();
+            save.Enabled = true;
+
+            if (frames_tree.SelectedNode != null)
+            {
+                for (int i = 0; i < knowledgeBase.Frames.Count; i++)
+                {
+                    if (knowledgeBase.Frames[i].Name == frames_tree.SelectedNode.Text)
+                    {
+                        viewFrame = knowledgeBase.Frames[i];
+                        break;
+                    }
+                }
+
+                for (int i = 0; i < viewFrame.Slots.Count; i++)
+                {
+                    edit_dvg.Rows.Add(viewFrame.Slots[i].Name, viewFrame.Slots[i].Value,
+                        viewFrame.Slots[i].DataType, viewFrame.Slots[i].Demon);
+                }
+            }
         }
 
         private void EnabledControls(bool x)

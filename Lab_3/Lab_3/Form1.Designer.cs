@@ -52,6 +52,7 @@
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.frames_tree = new System.Windows.Forms.TreeView();
+            this.save = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -177,7 +178,7 @@
             this.apply.Enabled = false;
             this.apply.Location = new System.Drawing.Point(0, 267);
             this.apply.Name = "apply";
-            this.apply.Size = new System.Drawing.Size(489, 26);
+            this.apply.Size = new System.Drawing.Size(502, 26);
             this.apply.TabIndex = 3;
             this.apply.Text = "Принять";
             this.apply.UseVisualStyleBackColor = true;
@@ -185,12 +186,13 @@
             // 
             // dialog_dvg
             // 
+            this.dialog_dvg.AllowUserToAddRows = false;
             this.dialog_dvg.AllowUserToDeleteRows = false;
             this.dialog_dvg.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dialog_dvg.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dialog_dvg.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dialog_dvg.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dialog_dvg.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.SlotName,
             this.Value,
@@ -201,7 +203,8 @@
             this.dialog_dvg.Name = "dialog_dvg";
             this.dialog_dvg.RowHeadersVisible = false;
             this.dialog_dvg.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.dialog_dvg.Size = new System.Drawing.Size(489, 264);
+            this.dialog_dvg.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.dialog_dvg.Size = new System.Drawing.Size(502, 264);
             this.dialog_dvg.TabIndex = 0;
             // 
             // SlotName
@@ -251,6 +254,7 @@
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.save);
             this.tabPage3.Controls.Add(this.edit_dvg);
             this.tabPage3.Controls.Add(this.frames_tree);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
@@ -274,11 +278,11 @@
             this.dataGridViewTextBoxColumn3,
             this.dataGridViewTextBoxColumn4});
             this.edit_dvg.Enabled = false;
-            this.edit_dvg.Location = new System.Drawing.Point(239, 0);
+            this.edit_dvg.Location = new System.Drawing.Point(184, 0);
             this.edit_dvg.Name = "edit_dvg";
             this.edit_dvg.RowHeadersVisible = false;
             this.edit_dvg.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.edit_dvg.Size = new System.Drawing.Size(263, 293);
+            this.edit_dvg.Size = new System.Drawing.Size(318, 293);
             this.edit_dvg.TabIndex = 2;
             // 
             // dataGridViewTextBoxColumn1
@@ -286,7 +290,6 @@
             this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.dataGridViewTextBoxColumn1.HeaderText = "Имя слота";
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
             this.dataGridViewTextBoxColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
             // dataGridViewTextBoxColumn2
@@ -298,13 +301,11 @@
             // 
             this.dataGridViewTextBoxColumn3.HeaderText = "Тип значения";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn4
             // 
             this.dataGridViewTextBoxColumn4.HeaderText = "Процедура";
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.ReadOnly = true;
             // 
             // frames_tree
             // 
@@ -313,8 +314,21 @@
             this.frames_tree.Enabled = false;
             this.frames_tree.Location = new System.Drawing.Point(0, 0);
             this.frames_tree.Name = "frames_tree";
-            this.frames_tree.Size = new System.Drawing.Size(233, 293);
+            this.frames_tree.Size = new System.Drawing.Size(178, 264);
             this.frames_tree.TabIndex = 0;
+            this.frames_tree.NodeMouseDoubleClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.frames_tree_NodeMouseDoubleClick);
+            // 
+            // save
+            // 
+            this.save.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.save.Enabled = false;
+            this.save.Location = new System.Drawing.Point(0, 270);
+            this.save.Name = "save";
+            this.save.Size = new System.Drawing.Size(178, 23);
+            this.save.TabIndex = 3;
+            this.save.Text = "Сохранить";
+            this.save.UseVisualStyleBackColor = true;
+            this.save.Click += new System.EventHandler(this.save_Click);
             // 
             // Form1
             // 
@@ -365,6 +379,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.Button save;
     }
 }
 

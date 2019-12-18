@@ -9,20 +9,28 @@ namespace Lab_3
 {
     class LogicalInferenceMachine
     {
-        private KnowledgeBase knoledgeBase;
+        private KnowledgeBase knowledgeBase;
 
         public DataGridView DialogDGV { get; set; }
         public RichTextBox Reasoning { get; set; }
 
-        public LogicalInferenceMachine(KnowledgeBase knoledgeBase)
+        public LogicalInferenceMachine(KnowledgeBase knowledgeBase)
         {
-            this.knoledgeBase = knoledgeBase;
+            this.knowledgeBase = knowledgeBase;
         }
 
-        public void LogicalInferenceStart()
+        public void LogicalInferenceStart(Frame userFrame)
         {
-            List<Frame> frames = (from frame in knoledgeBase.Frames select frame).ToList();
+            List<Frame> frames = (from frame in knowledgeBase.Frames select frame).ToList();
 
+            for (int i = 0; i < userFrame.Slots.Count; i++)
+            {
+
+            }
+        }
+
+        private void Explanation()
+        {
 
         }
     }
