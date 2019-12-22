@@ -1,0 +1,591 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Frames>
+	<Frame name="VR-игра">
+		<Slot name="Жанр">
+			<value></value>
+			<datatype>text</datatype>
+			<demon></demon>
+		</Slot>
+		<Slot name="Акции VR-клуба">
+			<value></value>
+			<datatype>bool</datatype>
+			<demon></demon>
+		</Slot>
+		<Slot name="Название">
+			<value></value>
+			<datatype>text</datatype>
+			<demon></demon>
+		</Slot>
+		<Slot name="Бюджет">
+			<value></value>
+			<datatype>integer</datatype>
+			<demon></demon>
+		</Slot>
+		<Slot name="Время">
+			<value></value>
+			<datatype>integer</datatype>
+			<demon></demon>
+		</Slot>
+		<Slot name="Тематика">
+			<value></value>
+			<datatype>text</datatype>
+			<demon></demon>
+		</Slot>
+		<Slot name="Количество друзей">
+			<value></value>
+			<datatype>integer</datatype>
+			<demon></demon>
+		</Slot>
+		<Slot name="Возраст">
+			<value></value>
+			<datatype>text</datatype>
+			<demon></demon>
+		</Slot>
+	</Frame>
+	<Frame name="Однопользовательская" parent="VR-игра">
+		<Slot name="Жанр">
+			<value></value>
+			<datatype>text</datatype>
+			<demon></demon>
+		</Slot>
+		<Slot name="Акции VR-клуба">
+			<value></value>
+			<datatype>bool</datatype>
+			<demon></demon>
+		</Slot>
+		<Slot name="Название">
+			<value></value>
+			<datatype>text</datatype>
+			<demon></demon>
+		</Slot>
+		<Slot name="Бюджет">
+			<value>get_price(Время)</value>
+			<datatype>integer</datatype>
+			<demon>if-needed</demon>
+		</Slot>
+		<Slot name="Время">
+			<value></value>
+			<datatype>integer</datatype>
+			<demon></demon>
+		</Slot>
+		<Slot name="Тематика">
+			<value></value>
+			<datatype>text</datatype>
+			<demon></demon>
+		</Slot>
+		<Slot name="Количество друзей">
+			<value>0</value>
+			<datatype>integer</datatype>
+			<demon></demon>
+		</Slot>
+		<Slot name="Возраст">
+			<value></value>
+			<datatype>text</datatype>
+			<demon></demon>
+		</Slot>
+	</Frame>
+	<Frame name="Многопользовательская" parent="VR-игра">
+		<Slot name="Жанр">
+			<value></value>
+			<datatype>text</datatype>
+			<demon></demon>
+		</Slot>
+		<Slot name="Акции VR-клуба">
+			<value>get_sale(Количество друзей)</value>
+			<datatype>bool</datatype>
+			<demon>if-needed</demon>
+		</Slot>
+		<Slot name="Название">
+			<value></value>
+			<datatype>text</datatype>
+			<demon></demon>
+		</Slot>
+		<Slot name="Бюджет">
+			<value>get_price(Время)</value>
+			<datatype>integer</datatype>
+			<demon>if-needed</demon>
+		</Slot>
+		<Slot name="Время">
+			<value></value>
+			<datatype>integer</datatype>
+			<demon></demon>
+		</Slot>
+		<Slot name="Тематика">
+			<value></value>
+			<datatype>text</datatype>
+			<demon></demon>
+		</Slot>
+		<Slot name="Количество друзей">
+			<value>2</value>
+			<datatype>integer</datatype>
+			<demon></demon>
+		</Slot>
+		<Slot name="Возраст">
+			<value></value>
+			<datatype>text</datatype>
+			<demon></demon>
+		</Slot>
+	</Frame>
+	<Frame name="С друзьями" parent="Многопользовательская">
+		<Slot name="Жанр">
+			<value></value>
+			<datatype>text</datatype>
+			<demon></demon>
+		</Slot>
+		<Slot name="Акции VR-клуба">
+			<value></value>
+			<datatype>bool</datatype>
+			<demon></demon>
+		</Slot>
+		<Slot name="Название">
+			<value></value>
+			<datatype>text</datatype>
+			<demon></demon>
+		</Slot>
+		<Slot name="Бюджет">
+			<value></value>
+			<datatype>integer</datatype>
+			<demon></demon>
+		</Slot>
+		<Slot name="Время">
+			<value>get_time(Бюджет)</value>
+			<datatype>integer</datatype>
+			<demon>if-needed</demon>
+		</Slot>
+		<Slot name="Тематика">
+			<value></value>
+			<datatype>text</datatype>
+			<demon></demon>
+		</Slot>
+		<Slot name="Количество друзей">
+			<value></value>
+			<datatype>integer</datatype>
+			<demon></demon>
+		</Slot>
+		<Slot name="Возраст">
+			<value></value>
+			<datatype>text</datatype>
+			<demon></demon>
+		</Slot>
+	</Frame>
+	<Frame name="Онлайн" parent="Многопользовательская">
+		<Slot name="Жанр">
+			<value></value>
+			<datatype>text</datatype>
+			<demon></demon>
+		</Slot>
+		<Slot name="Акции VR-клуба">
+			<value></value>
+			<datatype>bool</datatype>
+			<demon></demon>
+		</Slot>
+		<Slot name="Название">
+			<value></value>
+			<datatype>text</datatype>
+			<demon></demon>
+		</Slot>
+		<Slot name="Бюджет">
+			<value></value>
+			<datatype>integer</datatype>
+			<demon></demon>
+		</Slot>
+		<Slot name="Время">
+			<value>get_time(Бюджет)</value>
+			<datatype>integer</datatype>
+			<demon>if-needed</demon>
+		</Slot>
+		<Slot name="Тематика">
+			<value></value>
+			<datatype>text</datatype>
+			<demon></demon>
+		</Slot>
+		<Slot name="Количество друзей">
+			<value></value>
+			<datatype>integer</datatype>
+			<demon></demon>
+		</Slot>
+		<Slot name="Возраст">
+			<value></value>
+			<datatype>text</datatype>
+			<demon></demon>
+		</Slot>
+	</Frame>
+	<Frame name="Защита крепости" parent="С друзьями">
+		<Slot name="Жанр">
+			<value></value>
+			<datatype>text</datatype>
+			<demon></demon>
+		</Slot>
+		<Slot name="Акции VR-клуба">
+			<value></value>
+			<datatype>bool</datatype>
+			<demon></demon>
+		</Slot>
+		<Slot name="Название">
+			<value>Elven assassin</value>
+			<datatype>text</datatype>
+			<demon></demon>
+		</Slot>
+		<Slot name="Бюджет">
+			<value></value>
+			<datatype>integer</datatype>
+			<demon></demon>
+		</Slot>
+		<Slot name="Время">
+			<value></value>
+			<datatype>integer</datatype>
+			<demon></demon>
+		</Slot>
+		<Slot name="Тематика">
+			<value>Фэнтези</value>
+			<datatype>text</datatype>
+			<demon></demon>
+		</Slot>
+		<Slot name="Количество друзей">
+			<value></value>
+			<datatype>integer</datatype>
+			<demon></demon>
+		</Slot>
+		<Slot name="Возраст">
+			<value>12+</value>
+			<datatype>text</datatype>
+			<demon></demon>
+		</Slot>
+	</Frame>	
+	<Frame name="Выживание" parent="Онлайн">
+		<Slot name="Жанр">
+			<value></value>
+			<datatype>text</datatype>
+			<demon></demon>
+		</Slot>
+		<Slot name="Акции VR-клуба">
+			<value></value>
+			<datatype>bool</datatype>
+			<demon></demon>
+		</Slot>
+		<Slot name="Название">
+			<value>Arizoba Sunshine</value>
+			<datatype>text</datatype>
+			<demon></demon>
+		</Slot>
+		<Slot name="Бюджет">
+			<value></value>
+			<datatype>integer</datatype>
+			<demon></demon>
+		</Slot>
+		<Slot name="Время">
+			<value></value>
+			<datatype>integer</datatype>
+			<demon></demon>
+		</Slot>
+		<Slot name="Тематика">
+			<value>Постаппокалипсис</value>
+			<datatype>text</datatype>
+			<demon></demon>
+		</Slot>
+		<Slot name="Количество друзей">
+			<value></value>
+			<datatype>integer</datatype>
+			<demon></demon>
+		</Slot>
+		<Slot name="Возраст">
+			<value>18+</value>
+			<datatype>text</datatype>
+			<demon></demon>
+		</Slot>
+	</Frame>	
+	<Frame name="VR-experiance" parent="Однопользовательская">
+		<Slot name="Жанр">
+			<value></value>
+			<datatype>text</datatype>
+			<demon></demon>
+		</Slot>
+		<Slot name="Акции VR-клуба">
+			<value></value>
+			<datatype>bool</datatype>
+			<demon></demon>
+		</Slot>
+		<Slot name="Название">
+			<value></value>
+			<datatype>text</datatype>
+			<demon></demon>
+		</Slot>
+		<Slot name="Бюджет">
+			<value></value>
+			<datatype>integer</datatype>
+			<demon></demon>
+		</Slot>
+		<Slot name="Время">
+			<value>get_time(Бюджет)</value>
+			<datatype>integer</datatype>
+			<demon>if-needed</demon>
+		</Slot>
+		<Slot name="Тематика">
+			<value></value>
+			<datatype>text</datatype>
+			<demon></demon>
+		</Slot>
+		<Slot name="Количество друзей">
+			<value></value>
+			<datatype>integer</datatype>
+			<demon></demon>
+		</Slot>
+		<Slot name="Возраст">
+			<value></value>
+			<datatype>text</datatype>
+			<demon></demon>
+		</Slot>
+	</Frame>
+	<Frame name="Ритм-игра" parent="Однопользовательская">
+		<Slot name="Жанр">
+			<value></value>
+			<datatype>text</datatype>
+			<demon></demon>
+		</Slot>
+		<Slot name="Акции VR-клуба">
+			<value></value>
+			<datatype>bool</datatype>
+			<demon></demon>
+		</Slot>
+		<Slot name="Название">
+			<value></value>
+			<datatype>text</datatype>
+			<demon></demon>
+		</Slot>
+		<Slot name="Бюджет">
+			<value></value>
+			<datatype>integer</datatype>
+			<demon></demon>
+		</Slot>
+		<Slot name="Время">
+			<value>get_time(Бюджет)</value>
+			<datatype>integer</datatype>
+			<demon>if-needed</demon>
+		</Slot>
+		<Slot name="Тематика">
+			<value></value>
+			<datatype>text</datatype>
+			<demon></demon>
+		</Slot>
+		<Slot name="Количество друзей">
+			<value></value>
+			<datatype>integer</datatype>
+			<demon></demon>
+		</Slot>
+		<Slot name="Возраст">
+			<value></value>
+			<datatype>text</datatype>
+			<demon></demon>
+		</Slot>
+	</Frame>
+	<Frame name="Экшн" parent="Однопользовательская">
+		<Slot name="Жанр">
+			<value></value>
+			<datatype>text</datatype>
+			<demon></demon>
+		</Slot>
+		<Slot name="Акции VR-клуба">
+			<value></value>
+			<datatype>bool</datatype>
+			<demon></demon>
+		</Slot>
+		<Slot name="Название">
+			<value></value>
+			<datatype>text</datatype>
+			<demon></demon>
+		</Slot>
+		<Slot name="Бюджет">
+			<value></value>
+			<datatype>integer</datatype>
+			<demon></demon>
+		</Slot>
+		<Slot name="Время">
+			<value>get_time(Бюджет)</value>
+			<datatype>integer</datatype>
+			<demon>if-needed</demon>
+		</Slot>
+		<Slot name="Тематика">
+			<value></value>
+			<datatype>text</datatype>
+			<demon></demon>
+		</Slot>
+		<Slot name="Количество друзей">
+			<value></value>
+			<datatype>integer</datatype>
+			<demon></demon>
+		</Slot>
+		<Slot name="Возраст">
+			<value></value>
+			<datatype>text</datatype>
+			<demon></demon>
+		</Slot>
+	</Frame>
+	<Frame name="Симулятор" parent="VR-experiance">
+		<Slot name="Жанр">
+			<value></value>
+			<datatype>text</datatype>
+			<demon></demon>
+		</Slot>
+		<Slot name="Акции VR-клуба">
+			<value></value>
+			<datatype>bool</datatype>
+			<demon></demon>
+		</Slot>
+		<Slot name="Название">
+			<value>Apollo 11 HD</value>
+			<datatype>text</datatype>
+			<demon></demon>
+		</Slot>
+		<Slot name="Бюджет">
+			<value></value>
+			<datatype>integer</datatype>
+			<demon></demon>
+		</Slot>
+		<Slot name="Время">
+			<value></value>
+			<datatype>integer</datatype>
+			<demon></demon>
+		</Slot>
+		<Slot name="Тематика">
+			<value>Космос</value>
+			<datatype>text</datatype>
+			<demon></demon>
+		</Slot>
+		<Slot name="Количество друзей">
+			<value></value>
+			<datatype>integer</datatype>
+			<demon></demon>
+		</Slot>
+		<Slot name="Возраст">
+			<value>6+</value>
+			<datatype>text</datatype>
+			<demon></demon>
+		</Slot>
+	</Frame>	
+	<Frame name="Танцы" parent="Ритм-игра">
+		<Slot name="Жанр">
+			<value></value>
+			<datatype>text</datatype>
+			<demon></demon>
+		</Slot>
+		<Slot name="Акции VR-клуба">
+			<value></value>
+			<datatype>bool</datatype>
+			<demon></demon>
+		</Slot>
+		<Slot name="Название">
+			<value>Beat Siber</value>
+			<datatype>text</datatype>
+			<demon></demon>
+		</Slot>
+		<Slot name="Бюджет">
+			<value></value>
+			<datatype>integer</datatype>
+			<demon></demon>
+		</Slot>
+		<Slot name="Время">
+			<value></value>
+			<datatype>integer</datatype>
+			<demon></demon>
+		</Slot>
+		<Slot name="Тематика">
+			<value>Музыкальная игра</value>
+			<datatype>text</datatype>
+			<demon></demon>
+		</Slot>
+		<Slot name="Количество друзей">
+			<value></value>
+			<datatype>integer</datatype>
+			<demon></demon>
+		</Slot>
+		<Slot name="Возраст">
+			<value>0+</value>
+			<datatype>text</datatype>
+			<demon></demon>
+		</Slot>
+	</Frame>	
+	<Frame name="Приключение" parent="Экшн">
+		<Slot name="Жанр">
+			<value></value>
+			<datatype>text</datatype>
+			<demon></demon>
+		</Slot>
+		<Slot name="Акции VR-клуба">
+			<value></value>
+			<datatype>bool</datatype>
+			<demon></demon>
+		</Slot>
+		<Slot name="Название">
+			<value>To the top</value>
+			<datatype>text</datatype>
+			<demon></demon>
+		</Slot>
+		<Slot name="Бюджет">
+			<value></value>
+			<datatype>integer</datatype>
+			<demon></demon>
+		</Slot>
+		<Slot name="Время">
+			<value></value>
+			<datatype>integer</datatype>
+			<demon></demon>
+		</Slot>
+		<Slot name="Тематика">
+			<value>Альтернативная реальность</value>
+			<datatype>text</datatype>
+			<demon></demon>
+		</Slot>
+		<Slot name="Количество друзей">
+			<value></value>
+			<datatype>integer</datatype>
+			<demon></demon>
+		</Slot>
+		<Slot name="Возраст">
+			<value>6+</value>
+			<datatype>text</datatype>
+			<demon></demon>
+		</Slot>
+	</Frame>	
+	<Frame name="Стрелялка" parent="Экшн">
+		<Slot name="Жанр">
+			<value></value>
+			<datatype>text</datatype>
+			<demon></demon>
+		</Slot>
+		<Slot name="Акции VR-клуба">
+			<value></value>
+			<datatype>bool</datatype>
+			<demon></demon>
+		</Slot>
+		<Slot name="Название">
+			<value>Pavlov VR</value>
+			<datatype>text</datatype>
+			<demon></demon>
+		</Slot>
+		<Slot name="Бюджет">
+			<value></value>
+			<datatype>integer</datatype>
+			<demon></demon>
+		</Slot>
+		<Slot name="Время">
+			<value></value>
+			<datatype>integer</datatype>
+			<demon></demon>
+		</Slot>
+		<Slot name="Тематика">
+			<value>Военные действия</value>
+			<datatype>text</datatype>
+			<demon></demon>
+		</Slot>
+		<Slot name="Количество друзей">
+			<value></value>
+			<datatype>integer</datatype>
+			<demon></demon>
+		</Slot>
+		<Slot name="Возраст">
+			<value>16+</value>
+			<datatype>text</datatype>
+			<demon></demon>
+		</Slot>
+	</Frame>	
+</Frames>
