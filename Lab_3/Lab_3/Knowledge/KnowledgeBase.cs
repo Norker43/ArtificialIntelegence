@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml;
+using System.Xml.Linq;
 
 namespace Lab_3
 {
@@ -74,7 +75,34 @@ namespace Lab_3
 
         public void LoadIn(string path)
         {
+            XDocument xDoc = new XDocument();
+            XElement Frames = new XElement("Frames");
 
+            foreach (Frame frame in this.Frames)
+            {
+                XElement xFrame = new XElement("Frame");
+                xFrame.Add(new XAttribute("name", frame.Name));
+
+                if (frame.Parent != null)
+                {
+                    xFrame.Add(new XAttribute("parent", frame.Parent.Name));
+                }
+
+                foreach (Slot slot in frame.Slots)
+                {
+                    XElement xSlot = new XElement("Slot");
+                    xSlot.Add(new XAttribute("name", slot.Name));
+                    xSlot.Add(new XElement("value", slot.Value));
+                    xSlot.Add(new XElement("datatype", slot.DataType));
+                    xSlot.Add(new XElement("demon", slot.Demon));
+                    xFrame.Add(xSlot);
+                }
+
+                Frames.Add(xFrame);
+            }
+
+            xDoc.Add(Frames);
+            xDoc.Save(path);
         }
 
         private void Treefication()

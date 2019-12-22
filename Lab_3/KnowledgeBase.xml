@@ -1,219 +1,99 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Frames>
-	<Frame name="Training material for printing">
-		<Slot name="Author">
-			<value></value>
-			<datatype>text</datatype>
-			<demon></demon>
-		</Slot>
-		<Slot name="Name">
-			<value></value>
-			<datatype>text</datatype>
-			<demon></demon>
-		</Slot>
-		<Slot name="Count pages">
-			<value></value>
-			<datatype>integer</datatype>
-			<demon></demon>
-		</Slot>
-		<Slot name="Binding type">
-			<value>brochure</value>
-			<datatype>text</datatype>
-			<demon></demon>
-		</Slot>
-		<Slot name="Preparation time">
-			<value>10</value>
-			<datatype>integer</datatype>
-			<demon></demon>
-		</Slot>
-	</Frame>
-	<Frame name="Toolkit" parent="Training material for printing">
-		<Slot name="Author">
-			<value></value>
-			<datatype>text</datatype>
-			<demon></demon>
-		</Slot>
-		<Slot name="Name">
-			<value></value>
-			<datatype>text</datatype>
-			<demon></demon>
-		</Slot>
-		<Slot name="Count pages">
-			<value></value>
-			<datatype>integer</datatype>
-			<demon></demon>
-		</Slot>
-		<Slot name="Binding type">
-			<value></value>
-			<datatype>text</datatype>
-			<demon></demon>
-		</Slot>
-		<Slot name="Preparation time">
-			<value>50</value>
-			<datatype>integer</datatype>
-			<demon></demon>
-		</Slot>
-	</Frame>
-	<Frame name="Book" parent="Training material for printing">
-		<Slot name="Author">
-			<value></value>
-			<datatype>text</datatype>
-			<demon></demon>
-		</Slot>
-		<Slot name="Name">
-			<value></value>
-			<datatype>text</datatype>
-			<demon></demon>
-		</Slot>
-		<Slot name="Count pages">
-			<value></value>
-			<datatype>integer</datatype>
-			<demon></demon>
-		</Slot>
-		<Slot name="Binding type">
-			<value>solid</value>
-			<datatype>text</datatype>
-			<demon></demon>
-		</Slot>
-		<Slot name="Preparation time">
-			<value>10</value>
-			<datatype>integer</datatype>
-			<demon></demon>
-		</Slot>
-	</Frame>
-	<Frame name="Toolkit by Ivanov I.I." parent="Toolkit">
-		<Slot name="Author">
-			<value>Ivanov I.I.</value>
-			<datatype>text</datatype>
-			<demon></demon>
-		</Slot>
-		<Slot name="Name">
-			<value>Laboratory works</value>
-			<datatype>text</datatype>
-			<demon></demon>
-		</Slot>
-		<Slot name="Count pages">
-			<value>38</value>
-			<datatype>integer</datatype>
-			<demon></demon>
-		</Slot>
-		<Slot name="Binding type">
-			<value>brochure</value>
-			<datatype>text</datatype>
-			<demon></demon>
-		</Slot>
-		<Slot name="Preparation time">
-			<value>38</value>
-			<datatype>integer</datatype>
-			<demon></demon>
-		</Slot>
-	</Frame>
-	<Frame name="Toolkit by Petrov I.I." parent="Toolkit">
-		<Slot name="Author">
-			<value>Ivanov I.I.</value>
-			<datatype>text</datatype>
-			<demon></demon>
-		</Slot>
-		<Slot name="Name">
-			<value>Laboratory works</value>
-			<datatype>text</datatype>
-			<demon></demon>
-		</Slot>
-		<Slot name="Count pages">
-			<value>38</value>
-			<datatype>integer</datatype>
-			<demon></demon>
-		</Slot>
-		<Slot name="Binding type">
-			<value>brochure</value>
-			<datatype>text</datatype>
-			<demon></demon>
-		</Slot>
-		<Slot name="Preparation time">
-			<value>38</value>
-			<datatype>integer</datatype>
-			<demon></demon>
-		</Slot>
-	</Frame>
-	<Frame name="Book by Smirnov I.I." parent="Book">
-		<Slot name="Author">
-			<value>Ivanov I.I.</value>
-			<datatype>text</datatype>
-			<demon></demon>
-		</Slot>
-		<Slot name="Name">
-			<value>Laboratory works</value>
-			<datatype>text</datatype>
-			<demon></demon>
-		</Slot>
-		<Slot name="Count pages">
-			<value>38</value>
-			<datatype>integer</datatype>
-			<demon></demon>
-		</Slot>
-		<Slot name="Binding type">
-			<value>brochure</value>
-			<datatype>text</datatype>
-			<demon></demon>
-		</Slot>
-		<Slot name="Preparation time">
-			<value>38</value>
-			<datatype>integer</datatype>
-			<demon></demon>
-		</Slot>
-	</Frame>
-	<Frame name="Test_1" parent="Toolkit by Petrov I.I.">
-		<Slot name="Author">
-			<value>Ivanov I.I.</value>
-			<datatype>text</datatype>
-			<demon></demon>
-		</Slot>
-		<Slot name="Name">
-			<value>Laboratory works</value>
-			<datatype>text</datatype>
-			<demon></demon>
-		</Slot>
-		<Slot name="Count pages">
-			<value>38</value>
-			<datatype>integer</datatype>
-			<demon></demon>
-		</Slot>
-		<Slot name="Binding type">
-			<value>brochure</value>
-			<datatype>text</datatype>
-			<demon></demon>
-		</Slot>
-		<Slot name="Preparation time">
-			<value>38</value>
-			<datatype>integer</datatype>
-			<demon></demon>
-		</Slot>
-	</Frame>
-	<Frame name="Test_2" parent="Toolkit by Petrov I.I.">
-		<Slot name="Author">
-			<value>Ivanov I.I.</value>
-			<datatype>text</datatype>
-			<demon></demon>
-		</Slot>
-		<Slot name="Name">
-			<value>Laboratory works</value>
-			<datatype>text</datatype>
-			<demon></demon>
-		</Slot>
-		<Slot name="Count pages">
-			<value>38</value>
-			<datatype>integer</datatype>
-			<demon></demon>
-		</Slot>
-		<Slot name="Binding type">
-			<value>brochure</value>
-			<datatype>text</datatype>
-			<demon></demon>
-		</Slot>
-		<Slot name="Preparation time">
-			<value>38</value>
-			<datatype>integer</datatype>
-			<demon></demon>
-		</Slot>
-	</Frame>
+  <Frame name="Учебный материал для печати">
+    <Slot name="Тип материала для печати">
+      <value></value>
+      <datatype>text</datatype>
+      <demon></demon>
+    </Slot>
+	<Slot name="Автор">
+      <value></value>
+      <datatype>text</datatype>
+      <demon></demon>
+    </Slot>
+    <Slot name="Название">
+      <value></value>
+      <datatype>text</datatype>
+      <demon></demon>
+    </Slot>
+    <Slot name="Количество страниц">
+      <value></value>
+      <datatype>integer</datatype>
+      <demon></demon>
+    </Slot>
+    <Slot name="Тип переплета">
+      <value>Брошюровка скобкой</value>
+      <datatype>text</datatype>
+      <demon></demon>
+    </Slot>
+    <Slot name="Время изготовления">
+      <value>10</value>
+      <datatype>integer</datatype>
+      <demon></demon>
+    </Slot>
+  </Frame>
+  <Frame name="Методическое пособие" parent="Учебный материал для печати">
+	<Slot name="Тип материала для печати">
+      <value></value>
+      <datatype>text</datatype>
+      <demon></demon>
+    </Slot>
+    <Slot name="Автор">
+      <value></value>
+      <datatype>text</datatype>
+      <demon></demon>
+    </Slot>
+    <Slot name="Название">
+      <value></value>
+      <datatype>text</datatype>
+      <demon></demon>
+    </Slot>
+    <Slot name="Количество страниц">
+      <value></value>
+      <datatype>integer</datatype>
+      <demon></demon>
+    </Slot>
+    <Slot name="Тип переплета">
+      <value></value>
+      <datatype>text</datatype>
+      <demon></demon>
+    </Slot>
+    <Slot name="Время изготовления">
+      <value>GetTime(Количество страниц)</value>
+      <datatype>integer</datatype>
+      <demon>if-needed</demon>
+    </Slot>
+  </Frame>
+  <Frame name="Книга" parent="Учебный материал для печати">
+	<Slot name="Тип материала для печати">
+      <value></value>
+      <datatype>text</datatype>
+      <demon></demon>
+    </Slot>
+    <Slot name="Автор">
+      <value></value>
+      <datatype>text</datatype>
+      <demon></demon>
+    </Slot>
+    <Slot name="Название">
+      <value></value>
+      <datatype>text</datatype>
+      <demon></demon>
+    </Slot>
+    <Slot name="Количество страниц">
+      <value></value>
+      <datatype>integer</datatype>
+      <demon></demon>
+    </Slot>
+    <Slot name="Тип переплета">
+      <value>твердый</value>
+      <datatype>text</datatype>
+      <demon></demon>
+    </Slot>
+    <Slot name="Время изготовления">
+      <value>100</value>
+      <datatype>integer</datatype>
+      <demon></demon>
+    </Slot>
+  </Frame>
 </Frames>
