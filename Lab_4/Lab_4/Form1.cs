@@ -200,22 +200,22 @@ namespace Lab_4
 
         private void clear_winner_ready_Click(object sender, EventArgs e)
         {
-            winners.Items.Add("Явный победитель, победитель:" + clearWinner.Execute());
+            winners.Items.Add("Явный победитель, победитель: " + clearWinner.Execute());
         }
 
         private void kopland_ready_Click(object sender, EventArgs e)
         {
-            winners.Items.Add("Явный победитель, победитель:" + clearWinner.Execute());
+            winners.Items.Add("Явный победитель, победитель: " + kopland.Execute());
         }
 
         private void simpson_ready_Click(object sender, EventArgs e)
         {
-
+            winners.Items.Add("Явный победитель, победитель: " + simpson.Execute());
         }
 
         private void board_ready_Click(object sender, EventArgs e)
         {
-
+            winners.Items.Add("Явный победитель, победитель: " + board.Execute());
         }
     }
 }
