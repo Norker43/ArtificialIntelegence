@@ -11,7 +11,6 @@ namespace Lab_3
     class LogicalInferenceMachine
     {
         KnowledgeBase knowledgeBase;
-        delegate string Procedure(string value);
 
         public DataGridView DialogDGV { get; set; }
         public RichTextBox Reasoning { get; set; }
@@ -33,6 +32,7 @@ namespace Lab_3
                     if (frames[i].Name == userFrame.Slots[j].Value)
                     {
                         userFrame.Parent = frames[i];
+                        break;
                     }
                 }
             }
@@ -93,23 +93,49 @@ namespace Lab_3
 
         private string AttachedProcedureExecute(Frame userFrame, string[] names)
         {
+            bool sale = false;
             string value = "";
-            Procedure procedure = null;
+
+            foreach (Slot slot in userFrame.Slots)
+            {
+                if (slot.Name == "Акции VR-клуба")
+                {
+                    if (slot.Value == "Да")
+                    {
+                        sale = true;
+                    }
+                    else
+                    {
+                        sale = false;
+                    }
+                }
+            }
 
             foreach (Slot slot in userFrame.Slots)
             {
                 if (slot.Name == names[1])
                 {
                     value = slot.Value;
+                    break;
                 }
             }
 
-            if (names[0] == "GetTime")
+            if (names[0] == "get_price")
             {
-                procedure = AttachedProcedure.GetTime;
+                return AttachedProcedure.GetPrice(value, sale);
             }
 
-            return procedure(value);
+            if (names[0] == "get_time")
+            {
+                return AttachedProcedure.GetTime(value);
+            }
+
+            if (names[0] == "get_sale")
+            {
+                return AttachedProcedure.GetSale(value);
+            }
+
+            return null;
         }
     }
 }

@@ -70,10 +70,10 @@ namespace Lab_3
                     viewFrame.Slots[i].DataType, viewFrame.Slots[i].Demon);
             }
 
-            dialog_dvg.Rows[0].Cells[1].Value = "Методическое пособие";
-            dialog_dvg.Rows[1].Cells[1].Value = "Малых А. А.";
-            dialog_dvg.Rows[2].Cells[1].Value = "Лаб. практикум";
-            dialog_dvg.Rows[3].Cells[1].Value = "38";
+            //dialog_dvg.Rows[0].Cells[1].Value = "Методическое пособие";
+            //dialog_dvg.Rows[1].Cells[1].Value = "Малых А. А.";
+            //dialog_dvg.Rows[2].Cells[1].Value = "Лаб. практикум";
+            //dialog_dvg.Rows[3].Cells[1].Value = "38";
         }
 
         private void discard_Click(object sender, EventArgs e)

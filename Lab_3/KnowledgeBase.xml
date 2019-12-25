@@ -6,6 +6,11 @@
 			<datatype>text</datatype>
 			<demon></demon>
 		</Slot>
+		<Slot name="Акции VR-клуба">
+			<value></value>
+			<datatype>bool</datatype>
+			<demon></demon>
+		</Slot>
 		<Slot name="Название">
 			<value></value>
 			<datatype>text</datatype>
@@ -36,16 +41,16 @@
 			<datatype>text</datatype>
 			<demon></demon>
 		</Slot>
-		<Slot name="Акции VR-клуба">
-			<value></value>
-			<datatype>bool</datatype>
-			<demon></demon>
-		</Slot>
 	</Frame>
 	<Frame name="Однопользовательская" parent="VR-игра">
 		<Slot name="Жанр">
 			<value></value>
 			<datatype>text</datatype>
+			<demon></demon>
+		</Slot>
+		<Slot name="Акции VR-клуба">
+			<value></value>
+			<datatype>bool</datatype>
 			<demon></demon>
 		</Slot>
 		<Slot name="Название">
@@ -78,17 +83,17 @@
 			<datatype>text</datatype>
 			<demon></demon>
 		</Slot>
-		<Slot name="Акции VR-клуба">
-			<value></value>
-			<datatype>bool</datatype>
-			<demon></demon>
-		</Slot>
 	</Frame>
 	<Frame name="Многопользовательская" parent="VR-игра">
 		<Slot name="Жанр">
 			<value></value>
 			<datatype>text</datatype>
 			<demon></demon>
+		</Slot>
+		<Slot name="Акции VR-клуба">
+			<value>get_sale(Количество друзей)</value>
+			<datatype>bool</datatype>
+			<demon>if-needed</demon>
 		</Slot>
 		<Slot name="Название">
 			<value></value>
@@ -120,16 +125,16 @@
 			<datatype>text</datatype>
 			<demon></demon>
 		</Slot>
-		<Slot name="Акции VR-клуба">
-			<value>get_sale(Количество друзей)</value>
-			<datatype>bool</datatype>
-			<demon>if-needed</demon>
-		</Slot>
 	</Frame>
 	<Frame name="С друзьями" parent="Многопользовательская">
 		<Slot name="Жанр">
 			<value></value>
 			<datatype>text</datatype>
+			<demon></demon>
+		</Slot>
+		<Slot name="Акции VR-клуба">
+			<value></value>
+			<datatype>bool</datatype>
 			<demon></demon>
 		</Slot>
 		<Slot name="Название">
@@ -160,11 +165,6 @@
 		<Slot name="Возраст">
 			<value></value>
 			<datatype>text</datatype>
-			<demon></demon>
-		</Slot>
-		<Slot name="Акции VR-клуба">
-			<value></value>
-			<datatype>bool</datatype>
 			<demon></demon>
 		</Slot>
 	</Frame>
@@ -174,6 +174,11 @@
 			<datatype>text</datatype>
 			<demon></demon>
 		</Slot>
+		<Slot name="Акции VR-клуба">
+			<value></value>
+			<datatype>bool</datatype>
+			<demon></demon>
+		</Slot>
 		<Slot name="Название">
 			<value></value>
 			<datatype>text</datatype>
@@ -204,16 +209,16 @@
 			<datatype>text</datatype>
 			<demon></demon>
 		</Slot>
-		<Slot name="Акции VR-клуба">
-			<value></value>
-			<datatype>bool</datatype>
-			<demon></demon>
-		</Slot>
 	</Frame>
 	<Frame name="Защита крепости" parent="С друзьями">
 		<Slot name="Жанр">
 			<value></value>
 			<datatype>text</datatype>
+			<demon></demon>
+		</Slot>
+		<Slot name="Акции VR-клуба">
+			<value></value>
+			<datatype>bool</datatype>
 			<demon></demon>
 		</Slot>
 		<Slot name="Название">
@@ -246,16 +251,16 @@
 			<datatype>text</datatype>
 			<demon></demon>
 		</Slot>
-		<Slot name="Акции VR-клуба">
-			<value></value>
-			<datatype>bool</datatype>
-			<demon></demon>
-		</Slot>
 	</Frame>	
 	<Frame name="Выживание" parent="Онлайн">
 		<Slot name="Жанр">
 			<value></value>
 			<datatype>text</datatype>
+			<demon></demon>
+		</Slot>
+		<Slot name="Акции VR-клуба">
+			<value></value>
+			<datatype>bool</datatype>
 			<demon></demon>
 		</Slot>
 		<Slot name="Название">
@@ -288,16 +293,16 @@
 			<datatype>text</datatype>
 			<demon></demon>
 		</Slot>
-		<Slot name="Акции VR-клуба">
-			<value></value>
-			<datatype>bool</datatype>
-			<demon></demon>
-		</Slot>
 	</Frame>	
 	<Frame name="VR-experiance" parent="Однопользовательская">
 		<Slot name="Жанр">
 			<value></value>
 			<datatype>text</datatype>
+			<demon></demon>
+		</Slot>
+		<Slot name="Акции VR-клуба">
+			<value></value>
+			<datatype>bool</datatype>
 			<demon></demon>
 		</Slot>
 		<Slot name="Название">
@@ -328,11 +333,6 @@
 		<Slot name="Возраст">
 			<value></value>
 			<datatype>text</datatype>
-			<demon></demon>
-		</Slot>
-		<Slot name="Акции VR-клуба">
-			<value></value>
-			<datatype>bool</datatype>
 			<demon></demon>
 		</Slot>
 	</Frame>
@@ -342,6 +342,11 @@
 			<datatype>text</datatype>
 			<demon></demon>
 		</Slot>
+		<Slot name="Акции VR-клуба">
+			<value></value>
+			<datatype>bool</datatype>
+			<demon></demon>
+		</Slot>
 		<Slot name="Название">
 			<value></value>
 			<datatype>text</datatype>
@@ -370,11 +375,6 @@
 		<Slot name="Возраст">
 			<value></value>
 			<datatype>text</datatype>
-			<demon></demon>
-		</Slot>
-		<Slot name="Акции VR-клуба">
-			<value></value>
-			<datatype>bool</datatype>
 			<demon></demon>
 		</Slot>
 	</Frame>
@@ -384,6 +384,11 @@
 			<datatype>text</datatype>
 			<demon></demon>
 		</Slot>
+		<Slot name="Акции VR-клуба">
+			<value></value>
+			<datatype>bool</datatype>
+			<demon></demon>
+		</Slot>
 		<Slot name="Название">
 			<value></value>
 			<datatype>text</datatype>
@@ -414,16 +419,16 @@
 			<datatype>text</datatype>
 			<demon></demon>
 		</Slot>
-		<Slot name="Акции VR-клуба">
-			<value></value>
-			<datatype>bool</datatype>
-			<demon></demon>
-		</Slot>
 	</Frame>
 	<Frame name="Симулятор" parent="VR-experiance">
 		<Slot name="Жанр">
 			<value></value>
 			<datatype>text</datatype>
+			<demon></demon>
+		</Slot>
+		<Slot name="Акции VR-клуба">
+			<value></value>
+			<datatype>bool</datatype>
 			<demon></demon>
 		</Slot>
 		<Slot name="Название">
@@ -456,16 +461,16 @@
 			<datatype>text</datatype>
 			<demon></demon>
 		</Slot>
-		<Slot name="Акции VR-клуба">
-			<value></value>
-			<datatype>bool</datatype>
-			<demon></demon>
-		</Slot>
 	</Frame>	
 	<Frame name="Танцы" parent="Ритм-игра">
 		<Slot name="Жанр">
 			<value></value>
 			<datatype>text</datatype>
+			<demon></demon>
+		</Slot>
+		<Slot name="Акции VR-клуба">
+			<value></value>
+			<datatype>bool</datatype>
 			<demon></demon>
 		</Slot>
 		<Slot name="Название">
@@ -498,16 +503,16 @@
 			<datatype>text</datatype>
 			<demon></demon>
 		</Slot>
-		<Slot name="Акции VR-клуба">
-			<value></value>
-			<datatype>bool</datatype>
-			<demon></demon>
-		</Slot>
 	</Frame>	
 	<Frame name="Приключение" parent="Экшн">
 		<Slot name="Жанр">
 			<value></value>
 			<datatype>text</datatype>
+			<demon></demon>
+		</Slot>
+		<Slot name="Акции VR-клуба">
+			<value></value>
+			<datatype>bool</datatype>
 			<demon></demon>
 		</Slot>
 		<Slot name="Название">
@@ -540,16 +545,16 @@
 			<datatype>text</datatype>
 			<demon></demon>
 		</Slot>
-		<Slot name="Акции VR-клуба">
-			<value></value>
-			<datatype>bool</datatype>
-			<demon></demon>
-		</Slot>
 	</Frame>	
 	<Frame name="Стрелялка" parent="Экшн">
 		<Slot name="Жанр">
 			<value></value>
 			<datatype>text</datatype>
+			<demon></demon>
+		</Slot>
+		<Slot name="Акции VR-клуба">
+			<value></value>
+			<datatype>bool</datatype>
 			<demon></demon>
 		</Slot>
 		<Slot name="Название">
@@ -580,11 +585,6 @@
 		<Slot name="Возраст">
 			<value>16+</value>
 			<datatype>text</datatype>
-			<demon></demon>
-		</Slot>
-		<Slot name="Акции VR-клуба">
-			<value></value>
-			<datatype>bool</datatype>
 			<demon></demon>
 		</Slot>
 	</Frame>	

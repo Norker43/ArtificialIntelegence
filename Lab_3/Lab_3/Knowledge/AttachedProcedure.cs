@@ -10,7 +10,35 @@ namespace Lab_3.Knowledge
     {
         public static string GetTime(string value)
         {
-            return value;
+            double temp = Convert.ToDouble(value);
+            temp /= 10;
+
+            return temp.ToString();
+        }
+
+        public static string GetPrice(string value, bool sale)
+        {
+            double temp = Convert.ToDouble(value);
+            temp *= 10;
+
+            if (sale)
+            {
+                temp *= 0.7;
+            }
+
+            return temp.ToString();
+        }
+
+        public static string GetSale(string value)
+        {
+            int countFriends = Convert.ToInt32(value);
+
+            if (countFriends >= 2)
+            {
+                return "Да";
+            }
+
+            return "Нет";
         }
 
         public static string[] ProcedureParse(string value)
