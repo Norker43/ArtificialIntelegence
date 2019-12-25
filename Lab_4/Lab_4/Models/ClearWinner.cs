@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Lab_4.Models
 {
-    class ClearWinner : Model
+    public class ClearWinner : Model
     {
         public ClearWinner() : base() { }
 
@@ -61,6 +61,7 @@ namespace Lab_4.Models
                     {
                         par.Add("Альтернатива " + (i) + " < Альтернатива "
                             + (j) + " = " + (g));
+
                         alter = alt[plus];
                         alt[plus] = alt[j - 1];
                         plus++;

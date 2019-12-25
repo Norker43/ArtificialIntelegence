@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Lab_4.Models
 {
-    class Simpson : Model
+    public class Simpson : Model
     {
         public Simpson() : base() { }
 

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Lab_4.Models
 {
-    class Kopland : Model
+    public class Kopland : Model
     {
         public Kopland() : base() { }
 

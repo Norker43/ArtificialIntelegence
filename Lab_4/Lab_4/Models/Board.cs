@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Lab_4.Models
 {
-    class Board : Model
+    public class Board : Model
     {
         public Board() : base() { }
 

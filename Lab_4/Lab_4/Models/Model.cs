@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Lab_4.Models
 {
-    abstract class Model
+    public abstract class Model
     {
         public List<Expert> Experts { get; set; }
 
