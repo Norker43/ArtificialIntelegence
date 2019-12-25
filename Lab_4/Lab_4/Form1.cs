@@ -215,7 +215,7 @@ namespace Lab_4
 
         private void board_ready_Click(object sender, EventArgs e)
         {
-
+            winners.Items.Add("Метод Борда, победитель: " + board.Execute());
         }
     }
 }

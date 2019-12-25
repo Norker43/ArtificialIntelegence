@@ -12,7 +12,33 @@ namespace Lab_4.Models
 
         public override string Execute()
         {
-            return "";
+            int[] summ = new int[Experts[0].Preferences.Length];
+
+            foreach (Expert expert in Experts)
+            {
+                for (int i = 1; i <= expert.Preferences.Length; i++)
+                {
+                    for (int j = 0; j < expert.Preferences.Length; j++)
+                    {
+                        if (expert.Preferences[j] == i)
+                        {
+                            summ[i - 1] += expert.Preferences.Length - j;
+                        }
+                    }
+                }
+            }
+
+            int value = 0, index = 0;
+            for (int i = 0; i < summ.Length; i++)
+            {
+                if (value < summ[i])
+                {
+                    index = i;
+                    value = summ[i];
+                }
+            }
+
+            return "Альтернатива " + (index + 1);
         }
     }
 }
