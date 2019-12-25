@@ -6,7 +6,13 @@ using System.Threading.Tasks;
 
 namespace Lab_4.Models
 {
-    class Simpson
+    class Simpson : Model
     {
+        public Simpson() : base() { }
+
+        public override string Execute()
+        {
+            return "";
+        }
     }
 }

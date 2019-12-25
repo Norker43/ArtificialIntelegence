@@ -6,7 +6,13 @@ using System.Threading.Tasks;
 
 namespace Lab_4.Models
 {
-    class Kopland
+    class Kopland : Model
     {
+        public Kopland() : base() { }
+
+        public override string Execute()
+        {
+            return "";
+        }
     }
 }

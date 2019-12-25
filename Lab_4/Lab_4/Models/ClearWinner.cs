@@ -6,12 +6,14 @@ using System.Threading.Tasks;
 
 namespace Lab_4.Models
 {
-    class Board : Model
+    class ClearWinner : Model
     {
-        public Board() : base() { }
+        public ClearWinner() : base() { }
 
         public override string Execute()
         {
+            
+
             return "";
         }
     }
